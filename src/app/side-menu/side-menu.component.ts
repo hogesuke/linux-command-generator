@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.css']
 })
+
 export class SideMenuComponent {
   commands = [ 'rsync', 'scp', 'ln' ];
 }
