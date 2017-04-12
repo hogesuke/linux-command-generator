@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { CommandService } from './commands/shared/command.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ CommandService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
