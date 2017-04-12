@@ -1,4 +1,7 @@
+import { Option } from './option';
+
 export class Command {
-  command: string;
   name: string;
+  grammar: string;
+  options: Option[];
 }
