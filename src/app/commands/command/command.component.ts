@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Command } from './command';
 
 @Component({
   selector: 'app-command',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 })
 
 export class CommandComponent {
-
+  @Input() command: Command;
 }
