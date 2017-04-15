@@ -24,7 +24,7 @@ import { CommandComponent } from './commands/command/command.component';
     RouterModule.forRoot([
       { path: '', redirectTo: '/commands', pathMatch: 'full' },
       { path: 'commands', component: DashboardComponent },
-      { path: 'commands/:id', component: CommandComponent }
+      { path: 'commands/:name', component: CommandComponent }
     ])
   ],
   providers: [ CommandService ],
