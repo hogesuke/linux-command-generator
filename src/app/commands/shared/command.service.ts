@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Command } from '../command/command';
 import { Option } from '../command/option';
+import { Argument } from '../command/argument';
 
 @Injectable()
 export class CommandService {
@@ -9,14 +10,26 @@ export class CommandService {
     new Command(
       'rsync',
       'ファイル同期を行うコマンド',
-      'rsync [options] <source> <destination>',
-      [ new Option('a', 'タイムスタンプをコピー元と同じにする', false, 'rsync -a ./source ./dest') ]
+      [
+        new Argument('source', 'コピー元', true, './source'),
+        new Argument('destination', 'コピー先', true, './dest')
+      ],
+      [
+        new Option('-a', 'タイムスタンプをコピー元と同じにする', null, '-a')
+      ],
+      'rsync [options] <source> <destination>'
     ),
     new Command(
       'scp',
       'ローカルとリモート間でファイル転送するコマンド',
-      'scp [options] <source> <destination>',
-      [ new Option('p', 'タイムスタンプ、モードをコピー元と同じにする', false, 'scp -p ./source ./dest') ]
+      [
+        new Argument('source', 'コピー元', true, './source'),
+        new Argument('destination', 'コピー先', true, './dest')
+      ],
+      [
+        new Option('-p', 'タイムスタンプ、モードをコピー元と同じにする', null, '-p')
+      ],
+      'scp [options] <source> <destination>'
     )
   ];
 

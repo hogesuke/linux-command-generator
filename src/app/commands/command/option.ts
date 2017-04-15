@@ -1,13 +1,15 @@
+import { Argument } from './argument';
+
 export class Option {
   name: string;
   description: string;
-  requireArgument: boolean;
+  argument: Argument;
   sample: string;
 
-  constructor(name: string, description: string, requireArgument: boolean, sample: string) {
-    this.name            = name;
-    this.description     = description;
-    this.requireArgument = requireArgument;
-    this.sample          = sample;
+  constructor(name: string, description: string, argument: Argument, sample: string) {
+    this.name        = name;
+    this.description = description;
+    this.argument    = argument;
+    this.sample      = sample;
   }
 }
