@@ -10,4 +10,8 @@ export class Argument {
     this.required    = required;
     this.sample      = sample;
   }
+
+  set input(value: string) {
+    this.input = value;
+  }
 }
