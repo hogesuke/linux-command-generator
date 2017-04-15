@@ -13,6 +13,7 @@ import { CommandComponent } from './commands/command/command.component';
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     SideMenuComponent,
     CommandComponent
   ],

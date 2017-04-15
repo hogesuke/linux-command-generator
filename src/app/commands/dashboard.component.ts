@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Command } from './command/command';
+import { CommandService } from './shared/command.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: [ './dashboard.component.css' ]
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  commands: Command[] = [];
+
+  constructor(private commandService: CommandService) { }
+
+  ngOnInit(): void {
+    this.commands = this.commandService.getCommands();
+  }
 
 }
