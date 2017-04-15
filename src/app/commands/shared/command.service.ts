@@ -2,21 +2,42 @@ import { Injectable } from '@angular/core';
 
 import { Command } from '../command/command';
 import { Option } from '../command/option';
+import { Argument } from '../command/argument';
 
 @Injectable()
 export class CommandService {
+  commands: Command[] = [
+    new Command(
+      'rsync',
+      'ファイル同期を行うコマンド',
+      [
+        new Argument('source', 'コピー元', true, './source'),
+        new Argument('destination', 'コピー先', true, './dest')
+      ],
+      [
+        new Option('-a', 'タイムスタンプをコピー元と同じにする', null, '-a')
+      ],
+      'rsync [options] <source> <destination>'
+    ),
+    new Command(
+      'scp',
+      'ローカルとリモート間でファイル転送するコマンド',
+      [
+        new Argument('source', 'コピー元', true, './source'),
+        new Argument('destination', 'コピー先', true, './dest')
+      ],
+      [
+        new Option('-p', 'タイムスタンプ、モードをコピー元と同じにする', null, '-p')
+      ],
+      'scp [options] <source> <destination>'
+    )
+  ];
+
   getCommands(): Command[] {
-    return [
-      new Command(
-        'rsync',
-        'rsync [options] <source> <destination>',
-        [ new Option('a', 'タイムスタンプをコピー元と同じにする', false, 'rsync -a ./source ./dest') ]
-      ),
-      new Command(
-        'scp',
-        'scp [options] <source> <destination>',
-        [ new Option('p', 'タイムスタンプ、モードをコピー元と同じにする', false, 'scp -p ./source ./dest') ]
-      )
-    ];
+    return this.commands;
+  }
+
+  getCommand(name: string): Command {
+    return this.commands.find(a => a.name === name);
   }
 }
