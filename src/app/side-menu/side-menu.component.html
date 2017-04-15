@@ -1,7 +1,9 @@
 <div id="sidemenu">
   <ul>
-    <li *ngFor="let command of commands">
-      <span>{{ command.name }}</span>
-    </li>
+    <a routerLink="/commands/{{ command.name }}" *ngFor="let command of commands">
+      <li>
+        <span>{{ command.name }}</span>
+      </li>
+    </a>
   </ul>
 </div>
