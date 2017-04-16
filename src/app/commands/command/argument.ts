@@ -11,7 +11,11 @@ export class Argument {
     this.sample      = sample;
   }
 
-  set input(value: string) {
-    this.input = value;
+  set input(input: string) {
+    this.input = input;
+  }
+
+  get input() {
+    return this.input;
   }
 }
