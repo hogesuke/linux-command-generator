@@ -15,7 +15,7 @@ export class Option {
     this.sample      = sample;
   }
 
-  getNameChar(): string {
-    return this.canCombine ? this.name.replace(/^-/, this.name) : this.name;
+  get withoutHyphen(): string {
+    return this.name.replace(/^-+/, this.name);
   }
 }

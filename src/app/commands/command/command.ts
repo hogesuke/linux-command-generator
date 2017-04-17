@@ -19,6 +19,11 @@ export class Command {
     this.optionHolder = new OptionHolder();
   }
 
+  // todo Utilityクラスに切り出す
+  getType(target): string {
+    return typeof target;
+  }
+
   getResult(): any[] {
     const terms: any[] = this.grammar.split(' ');
 

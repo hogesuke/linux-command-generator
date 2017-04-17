@@ -6,6 +6,15 @@
     {{ command.grammar }}
   </div>
 
+  <div class="result">
+    <span *ngFor="let term of command.getResult()">
+      <span *ngIf="command.getType(term) === 'string'">{{ term }}</span>
+      <span *ngIf="command.getType(term) === 'OptionHolder'">
+        <span *ngFor="let op of term.options">-{{ op.withoutHyphen }}</span>
+      </span>
+    </span>
+  </div>
+
   <h3>引数</h3>
   <div *ngFor="let arg of command.args">
     <label>{{ arg.name }}</label>
