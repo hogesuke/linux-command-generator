@@ -25,10 +25,10 @@
   </div>
 
   <h3>オプション</h3>
-  <table>
+  <table class="option-table">
     <tbody>
     <tr *ngFor="let option of command.options">
-      <td><button (click)="command.optionHolder.push(option)">{{ option.name }}</button></td>
+      <td class="option-name"><button (click)="command.optionHolder.push(option)">{{ option.name }}</button></td>
       <td>{{ option.description }}</td>
     </tr>
     </tbody>

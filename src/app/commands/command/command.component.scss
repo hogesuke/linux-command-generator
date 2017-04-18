@@ -1,0 +1,27 @@
+label {
+  font-size: 16px;
+}
+
+input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.result {
+  margin: 20px 0;
+  font-size: 22px;
+}
+
+.option-table {
+  width: 100%;
+
+  td {
+    padding: 10px 5px;
+    background-color: #e1eefa;
+  }
+
+  .option-name {
+    width: 100px;
+    text-align: center;
+  }
+}
