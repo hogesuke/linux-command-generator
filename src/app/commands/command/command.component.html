@@ -2,8 +2,20 @@
   <h2>{{ command.name }}</h2>
   <p>{{ command.description }}</p>
 
-  <div class="result">
+  <div class="grammar">
     {{ command.grammar }}
+  </div>
+
+  <div class="result">
+    <span>{{ command.name }}</span>
+    <span *ngIf="command.optionHolder.getCombinedOptions().length > 0">-</span>
+    <span *ngFor="let op of command.optionHolder.getCombinedOptions()">
+      <span>{{ op.withoutHyphen }}</span>
+    </span>
+    <span *ngFor="let op of command.optionHolder.getIsolatedOptions()">
+      <span>{{ op.name }}</span>
+      <span *ngIf="op.argument">{{ op.argument.input }}</span>
+    </span>
   </div>
 
   <h3>引数</h3>
@@ -16,7 +28,7 @@
   <table>
     <tbody>
     <tr *ngFor="let option of command.options">
-      <td>{{ option.name }}</td>
+      <td><button (click)="command.optionHolder.push(option)">{{ option.name }}</button></td>
       <td>{{ option.description }}</td>
     </tr>
     </tbody>

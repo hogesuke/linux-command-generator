@@ -15,7 +15,10 @@ export class CommandService {
         new Argument('destination', 'コピー先', true, './dest')
       ],
       [
-        new Option('-a', 'タイムスタンプをコピー元と同じにする', null, '-a')
+        new Option('-a', 'タイムスタンプをコピー元と同じにする', null, true, '-a'),
+        new Option('-b', 'ほげほげふがふが', null, true, '-b'),
+        new Option('--dry-run', 'ほげほげふがふが', null, false, '--dry-run'),
+        new Option('--hoge', 'ほげほげふがふが', new Argument('foo', 'ぴよぴよ', true, './foo'), false, '--dry-run')
       ],
       'rsync [options] <source> <destination>'
     ),
@@ -27,7 +30,7 @@ export class CommandService {
         new Argument('destination', 'コピー先', true, './dest')
       ],
       [
-        new Option('-p', 'タイムスタンプ、モードをコピー元と同じにする', null, '-p')
+        new Option('-p', 'タイムスタンプ、モードをコピー元と同じにする', null, true, '-p')
       ],
       'scp [options] <source> <destination>'
     )
