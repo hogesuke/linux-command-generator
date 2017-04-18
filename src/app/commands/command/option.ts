@@ -16,6 +16,6 @@ export class Option {
   }
 
   get withoutHyphen(): string {
-    return this.name.replace(/^-+/, this.name);
+    return this.name.replace(/^-+/, '');
   }
 }

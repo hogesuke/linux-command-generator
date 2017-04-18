@@ -8,6 +8,7 @@ export class OptionHolder {
   }
 
   push(option: Option): void {
+    if (this.options.some(a => a === option)) { return; }
     this.options.push(option);
   }
 

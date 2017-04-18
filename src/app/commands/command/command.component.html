@@ -7,11 +7,14 @@
   </div>
 
   <div class="result">
-    <span *ngFor="let term of command.getResult()">
-      <span *ngIf="command.getType(term) === 'string'">{{ term }}</span>
-      <span *ngIf="command.getType(term) === 'OptionHolder'">
-        <span *ngFor="let op of term.options">-{{ op.withoutHyphen }}</span>
-      </span>
+    <span>{{ command.name }}</span>
+    <span *ngIf="command.optionHolder.getCombinedOptions().length > 0">-</span>
+    <span *ngFor="let op of command.optionHolder.getCombinedOptions()">
+      <span>{{ op.withoutHyphen }}</span>
+    </span>
+    <span *ngFor="let op of command.optionHolder.getIsolatedOptions()">
+      <span>{{ op.name }}</span>
+      <span *ngIf="op.argument">{{ op.argument.input }}</span>
     </span>
   </div>
 
@@ -25,7 +28,7 @@
   <table>
     <tbody>
     <tr *ngFor="let option of command.options">
-      <td>{{ option.name }}</td>
+      <td><button (click)="command.optionHolder.push(option)">{{ option.name }}</button></td>
       <td>{{ option.description }}</td>
     </tr>
     </tbody>
