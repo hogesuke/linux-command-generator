@@ -11,6 +11,8 @@ html, body {
 #content {
   height: 100%;
   padding: 10px 30px;
+  box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 h2 {
