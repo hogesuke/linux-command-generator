@@ -27,8 +27,8 @@
   <h3>オプション</h3>
   <table class="option-table">
     <tbody>
-    <tr *ngFor="let option of command.options">
-      <td class="option-name"><button (click)="command.optionHolder.push(option)">{{ option.name }}</button></td>
+    <tr *ngFor="let option of command.options" (click)="command.optionHolder.push(option)">
+      <td class="option-name">{{ option.name }}</td>
       <td>{{ option.description }}</td>
     </tr>
     </tbody>

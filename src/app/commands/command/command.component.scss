@@ -14,14 +14,22 @@ input {
 
 .option-table {
   width: 100%;
+  color: rgba(0, 0, 0, 0.87);
+
+  tr {
+    border-bottom: solid 1px #ddd;
+
+    &:hover {
+      background-color: rgba(0, 78, 252, 0.05);
+      cursor: pointer;
+    }
+  }
 
   td {
     padding: 10px 5px;
-    background-color: #e1eefa;
   }
 
   .option-name {
-    width: 100px;
-    text-align: center;
+    width: 150px;
   }
 }
