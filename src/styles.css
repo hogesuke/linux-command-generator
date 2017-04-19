@@ -5,14 +5,22 @@ html, body {
 
 #main {
   height: 100%;
-  padding-left: 200px;
+  overflow-y: auto;
 }
 
 #content {
   height: 100%;
+  max-width: 800px;
+  min-width: 600px;
+  margin: 0 auto;
   padding: 10px 30px;
   box-sizing: border-box;
-  overflow-y: scroll;
+}
+
+@media screen and (max-width: 1400px) {
+  #content {
+    margin: 0 0 0 300px;
+  }
 }
 
 h2 {

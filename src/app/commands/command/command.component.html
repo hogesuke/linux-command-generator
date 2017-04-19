@@ -19,10 +19,13 @@
   </div>
 
   <h3>引数</h3>
-  <div *ngFor="let arg of command.args">
-    <label>{{ arg.name }}</label>
-    <input type="text">
-  </div>
+  <table class="arg-table">
+    <tr *ngFor="let arg of command.args">
+      <td class="arg-name">{{ arg.name }}</td>
+      <td class="arg-description">{{ arg.description }}</td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
 
   <h3>オプション</h3>
   <table class="option-table">

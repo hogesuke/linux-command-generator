@@ -7,12 +7,7 @@ input {
   font-size: 16px;
 }
 
-.result {
-  margin: 20px 0;
-  font-size: 22px;
-}
-
-.option-table {
+table {
   width: 100%;
   color: rgba(0, 0, 0, 0.87);
 
@@ -28,6 +23,25 @@ input {
   td {
     padding: 10px 5px;
   }
+}
+
+.result {
+  margin: 20px 0;
+  font-size: 22px;
+}
+
+.arg-table {
+
+  .arg-name {
+    width: 150px;
+  }
+
+  .arg-description {
+    width: 300px;
+  }
+}
+
+.option-table {
 
   .option-name {
     width: 150px;
