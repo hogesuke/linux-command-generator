@@ -1,9 +1,11 @@
 <div>
   <h2>{{ command.name }}</h2>
-  <p>{{ command.description }}</p>
+  <div class="command-description">
+    <span>{{ command.description }}</span>
+  </div>
 
-  <div class="grammar">
-    {{ command.grammar }}
+  <div class="command-grammar">
+    <span>{{ command.grammar }}</span>
   </div>
 
   <div class="result">
@@ -18,22 +20,26 @@
     </span>
   </div>
 
-  <h3>引数</h3>
-  <table class="arg-table">
-    <tr *ngFor="let arg of command.args">
-      <td class="arg-name">{{ arg.name }}</td>
-      <td class="arg-description">{{ arg.description }}</td>
-      <td class="arg-input-cell"><input type="text" placeholder="{{ arg.sample }}"></td>
-    </tr>
-  </table>
+  <div id="block-arg">
+    <h3>引数</h3>
+    <table class="arg-table">
+      <tr *ngFor="let arg of command.args">
+        <td class="arg-name">{{ arg.name }}</td>
+        <td class="arg-description">{{ arg.description }}</td>
+        <td class="arg-input"><input type="text" placeholder="{{ arg.sample }}"></td>
+      </tr>
+    </table>
+  </div>
 
-  <h3>オプション</h3>
-  <table class="option-table">
-    <tbody>
-    <tr *ngFor="let option of command.options" (click)="command.optionHolder.push(option)">
-      <td class="option-name">{{ option.name }}</td>
-      <td>{{ option.description }}</td>
-    </tr>
-    </tbody>
-  </table>
+  <div id="block-option">
+    <h3>オプション</h3>
+    <table class="option-table">
+      <tbody>
+      <tr *ngFor="let option of command.options" (click)="command.optionHolder.push(option)">
+        <td class="option-name">{{ option.name }}</td>
+        <td>{{ option.description }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

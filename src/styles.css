@@ -10,14 +10,14 @@ html, body {
 
 #content {
   height: 100%;
-  max-width: 800px;
+  max-width: 900px;
   min-width: 600px;
   margin: 0 auto;
   padding: 10px 30px;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
   #content {
     margin: 0 0 0 300px;
   }
@@ -25,12 +25,14 @@ html, body {
 
 h2 {
   margin: 10px 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #ddd;
   font-size: 28px;
   color: #4e565d;
 }
 
 h3 {
-  padding: 10px 0;
+  margin: 8px 0 15px 0;
   font-size: 18px;
   color: #4e565d;
 }
