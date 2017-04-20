@@ -19,8 +19,7 @@ export class CommandService {
         new Option('-b', 'ほげほげふがふが', null, true, '-b'),
         new Option('--dry-run', 'ほげほげふがふが', null, false, '--dry-run'),
         new Option('--hoge', 'ほげほげふがふが', new Argument('foo', 'ぴよぴよ', true, './foo'), false, '--dry-run')
-      ],
-      'rsync [options] <source> <destination>'
+      ]
     ),
     new Command(
       'scp',
@@ -31,8 +30,7 @@ export class CommandService {
       ],
       [
         new Option('-p', 'タイムスタンプ、モードをコピー元と同じにする', null, true, '-p')
-      ],
-      'scp [options] <source> <destination>'
+      ]
     )
   ];
 

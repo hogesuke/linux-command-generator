@@ -5,7 +5,11 @@
   </div>
 
   <div class="command-grammar">
-    <span>{{ command.grammar }}</span>
+    <span>{{ command.name }}</span>
+    <span class="options" *ngIf="command.hasOption()">[options]</span>
+    <span class="args" *ngIf="command.hasArg()">
+      <span *ngFor="let arg of command.args"><{{ arg.name }}></span>
+    </span>
   </div>
 
   <div class="result">

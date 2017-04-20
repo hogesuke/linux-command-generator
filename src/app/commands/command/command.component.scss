@@ -22,9 +22,21 @@ table {
 }
 
 .command-grammar {
-  padding: 20px;
+  padding: 25px 20px;
   background-color: #f4f4f5;
   font-size: 16px;
+  font-family: 'Roboto Mono', Monaco, courier, monospace;
+
+  .options {
+    color: #6cd05d;
+  }
+  .args {
+    color: #6d6bce;
+
+    span:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
 }
 
 .result {
