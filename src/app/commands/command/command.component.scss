@@ -36,13 +36,15 @@ table {
   }
 
   .arg-input-cell {
-    padding: 4px 0;
+    padding: 5px;
 
     input[type=text] {
+      width: 100%;
       padding: 5px;
+      box-sizing: border-box;
       background-color: transparent;
       border: none;
-      border-bottom: solid 2px rgba(106, 174, 243, 0.4);
+      border-bottom: solid 1px rgba(106, 174, 243, 0.4);
       font-size: 16px;
 
       &:focus {
