@@ -23,7 +23,7 @@
     <tr *ngFor="let arg of command.args">
       <td class="arg-name">{{ arg.name }}</td>
       <td class="arg-description">{{ arg.description }}</td>
-      <td><input type="text"></td>
+      <td class="arg-input-cell"><input type="text" placeholder="{{ arg.sample }}"></td>
     </tr>
   </table>
 

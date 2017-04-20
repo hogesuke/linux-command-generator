@@ -2,11 +2,6 @@ label {
   font-size: 16px;
 }
 
-input {
-  padding: 5px;
-  font-size: 16px;
-}
-
 table {
   width: 100%;
   color: rgba(0, 0, 0, 0.87);
@@ -38,6 +33,44 @@ table {
 
   .arg-description {
     width: 300px;
+  }
+
+  .arg-input-cell {
+    padding: 4px 0;
+
+    input[type=text] {
+      padding: 5px;
+      background-color: transparent;
+      border: none;
+      border-bottom: solid 2px rgba(106, 174, 243, 0.4);
+      font-size: 16px;
+
+      &:focus {
+        outline: 0;
+        border-bottom-color: rgba(106, 174, 243, 1);
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+      &:placeholder-shown {
+        color: #ccc;
+      }
+      &::-webkit-input-placeholder {
+        color: #ccc;
+        opacity: 1;
+      }
+      &:-moz-placeholder {
+        color: #ccc;
+      }
+      &::-moz-placeholder {
+        color: #ccc;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        color: #ccc;
+      }
+    }
   }
 }
 
