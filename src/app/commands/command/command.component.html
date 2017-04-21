@@ -22,6 +22,10 @@
       <span>{{ op.name }}</span>
       <span *ngIf="op.argument">{{ op.argument.input }}</span>
     </span>
+    <span *ngFor="let arg of command.args">
+      <span *ngIf="arg.input">{{ arg.input }}</span>
+      <span *ngIf="!arg.input"><{{ arg.name }}></span>
+    </span>
   </div>
 
   <div id="block-arg">
@@ -30,7 +34,9 @@
       <tr *ngFor="let arg of command.args">
         <td class="arg-name">{{ arg.name }}</td>
         <td class="arg-description">{{ arg.description }}</td>
-        <td class="arg-input"><input type="text" placeholder="{{ arg.sample }}"></td>
+        <td class="arg-input">
+          <input type="text" placeholder="{{ arg.sample }}" [(ngModel)]="arg.input">
+        </td>
       </tr>
     </table>
   </div>
