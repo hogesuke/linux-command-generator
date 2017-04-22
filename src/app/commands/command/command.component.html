@@ -9,12 +9,9 @@
     <app-options-expression *ngIf="command.hasOption()"
                             [holder]="command.optionHolder">
     </app-options-expression>
-    <span class="args" *ngIf="command.hasArg()">
-      <span *ngFor="let arg of command.args">
-        <span *ngIf="arg.input">{{ arg.input }}</span>
-        <span *ngIf="!arg.input"><{{ arg.name }}></span>
-      </span>
-    </span>
+    <app-arguments-expression *ngIf="command.hasArg()"
+                              [args]="command.args">
+    </app-arguments-expression>
   </div>
 
   <div id="block-arg">
