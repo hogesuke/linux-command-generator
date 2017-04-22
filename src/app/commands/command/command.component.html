@@ -4,7 +4,7 @@
     <span>{{ command.description }}</span>
   </div>
 
-  <div class="command-grammar">
+  <div class="command-grammar monospaced">
     <span>{{ command.name }}</span>
     <app-options-expression *ngIf="command.hasOption()"
                             [holder]="command.optionHolder">
@@ -18,7 +18,7 @@
     <h3>引数</h3>
     <table class="arg-table">
       <tr *ngFor="let arg of command.args">
-        <td class="arg-name">{{ arg.name }}</td>
+        <td class="arg-name monospaced">{{ arg.name }}</td>
         <td class="arg-description">{{ arg.description }}</td>
         <td class="arg-input">
           <input type="text"
@@ -35,7 +35,7 @@
     <table class="option-table">
       <tbody>
       <tr *ngFor="let option of command.options" (click)="command.optionHolder.push(option)">
-        <td class="option-name">{{ option.name }}</td>
+        <td class="option-name monospaced">{{ option.name }}</td>
         <td>{{ option.description }}</td>
       </tr>
       </tbody>
