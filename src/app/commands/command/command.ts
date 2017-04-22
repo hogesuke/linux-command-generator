@@ -7,15 +7,21 @@ export class Command {
   description: string;
   args: Argument[];
   options: Option[];
-  grammar: string;
   optionHolder: OptionHolder;
 
-  constructor(name: string, description: string, args: Argument[], options: Option[], grammar: string) {
+  constructor(name: string, description: string, args: Argument[], options: Option[]) {
     this.name         = name;
     this.description  = description;
     this.args         = args;
     this.options      = options;
-    this.grammar      = grammar;
     this.optionHolder = new OptionHolder();
+  }
+
+  hasOption(): boolean {
+    return this.options && this.options.length > 0;
+  }
+
+  hasArg(): boolean {
+    return this.args && this.args.length > 0;
   }
 }

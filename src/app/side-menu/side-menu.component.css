@@ -1,8 +1,8 @@
 #sidemenu {
-  float: left;
-  padding: 10px;
+  position: fixed;
   height: 100%;
-  width: 200px;
+  padding: 10px;
+  width: 250px;
   background-color: #F4F6F7;
   box-sizing: border-box;
 }

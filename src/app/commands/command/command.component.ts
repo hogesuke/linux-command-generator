@@ -8,7 +8,7 @@ import { CommandService } from '../shared/command.service';
 @Component({
   selector: 'app-command',
   templateUrl: './command.component.html',
-  styleUrls: [ './command.component.css' ]
+  styleUrls: [ './command.component.scss' ]
 })
 
 export class CommandComponent implements OnInit {

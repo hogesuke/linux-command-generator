@@ -1,26 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
 html, body {
   height: 100%;
+}
+
+body {
   font-size: 14px;
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 #main {
   height: 100%;
-  padding-left: 200px;
+  overflow-y: auto;
 }
 
 #content {
   height: 100%;
+  max-width: 900px;
+  min-width: 600px;
+  margin: 0 auto;
   padding: 10px 30px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1500px) {
+  #content {
+    margin: 0 0 0 300px;
+  }
 }
 
 h2 {
   margin: 10px 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #ddd;
   font-size: 28px;
   color: #4e565d;
 }
 
 h3 {
-  padding: 10px 0;
+  margin: 8px 0 15px 0;
   font-size: 18px;
   color: #4e565d;
 }
