@@ -47,6 +47,13 @@ a {
   text-decoration: none;
 }
 
+input.font-awesome {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
 .monospaced {
   font-family: Monaco, courier, monospace;
 }

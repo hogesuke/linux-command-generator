@@ -17,7 +17,7 @@ table {
 
 .command-description {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .command-grammar {
@@ -68,6 +68,7 @@ table {
         &::placeholder {
           font-weight: 100;
           color: #ccc;
+          content: '\f040';
         }
 
         &:focus {
