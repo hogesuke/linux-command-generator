@@ -23,6 +23,7 @@ table {
 
 .command-grammar {
   position: relative;
+  margin-bottom: 30px;
   padding: 25px 20px 25px 50px;
   background-color: #f4f4f5;
   font-size: 16px;
@@ -39,7 +40,7 @@ table {
   }
 
   .options {
-    color: #6cd05d;
+    color: #35bb21;
   }
   .args {
     color: #5587d6;
@@ -48,11 +49,6 @@ table {
       margin-right: 5px;
     }
   }
-}
-
-.result {
-  margin: 50px 0;
-  font-size: 22px;
 }
 
 #block-arg {

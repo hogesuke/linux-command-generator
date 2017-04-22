@@ -6,25 +6,22 @@
 
   <div class="command-grammar">
     <span>{{ command.name }}</span>
-    <span class="options" *ngIf="command.hasOption()">[options]</span>
+    <span class="options" *ngIf="command.hasOption()">
+      <span *ngIf="command.optionHolder.options.length === 0">[options]</span>
+      <span *ngIf="command.optionHolder.getCombinedOptions().length > 0">-</span>
+      <span *ngFor="let op of command.optionHolder.getCombinedOptions()">
+        <span>{{ op.withoutHyphen }}</span>
+      </span>
+      <span *ngFor="let op of command.optionHolder.getIsolatedOptions()">
+        <span>{{ op.name }}</span>
+        <span *ngIf="op.argument">{{ op.argument.input }}</span>
+      </span>
+    </span>
     <span class="args" *ngIf="command.hasArg()">
-      <span *ngFor="let arg of command.args"><{{ arg.name }}></span>
-    </span>
-  </div>
-
-  <div class="result">
-    <span>{{ command.name }}</span>
-    <span *ngIf="command.optionHolder.getCombinedOptions().length > 0">-</span>
-    <span *ngFor="let op of command.optionHolder.getCombinedOptions()">
-      <span>{{ op.withoutHyphen }}</span>
-    </span>
-    <span *ngFor="let op of command.optionHolder.getIsolatedOptions()">
-      <span>{{ op.name }}</span>
-      <span *ngIf="op.argument">{{ op.argument.input }}</span>
-    </span>
-    <span *ngFor="let arg of command.args">
-      <span *ngIf="arg.input">{{ arg.input }}</span>
-      <span *ngIf="!arg.input"><{{ arg.name }}></span>
+      <span *ngFor="let arg of command.args">
+        <span *ngIf="arg.input">{{ arg.input }}</span>
+        <span *ngIf="!arg.input"><{{ arg.name }}></span>
+      </span>
     </span>
   </div>
 
@@ -35,7 +32,10 @@
         <td class="arg-name">{{ arg.name }}</td>
         <td class="arg-description">{{ arg.description }}</td>
         <td class="arg-input">
-          <input type="text" placeholder="{{ arg.sample }}" [(ngModel)]="arg.input">
+          <input type="text"
+                 placeholder="{{ arg.sample }}"
+                 [(ngModel)]="arg.input"
+                 spellcheck="false">
         </td>
       </tr>
     </table>
