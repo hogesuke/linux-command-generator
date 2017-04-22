@@ -17,21 +17,32 @@ table {
 }
 
 .command-description {
-  margin: 10px 0;
+  margin-bottom: 20px;
   font-size: 16px;
 }
 
 .command-grammar {
-  padding: 25px 20px;
+  position: relative;
+  padding: 25px 20px 25px 50px;
   background-color: #f4f4f5;
   font-size: 16px;
   font-family: 'Roboto Mono', Monaco, courier, monospace;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 6px 8px;
+    content: '文法';
+    font-size: 12px;
+    color: #888888;
+  }
 
   .options {
     color: #6cd05d;
   }
   .args {
-    color: #6d6bce;
+    color: #5587d6;
 
     span:not(:last-child) {
       margin-right: 5px;
@@ -40,7 +51,7 @@ table {
 }
 
 .result {
-  margin: 20px 0;
+  margin: 50px 0;
   font-size: 22px;
 }
 
@@ -78,7 +89,7 @@ table {
 
         &:focus {
           outline: 0;
-          border-bottom-color: rgba(106, 174, 243, 0.7);
+          border-bottom-color: rgba(85, 135, 214, 1.0);
 
           &::placeholder {
             color: transparent;
