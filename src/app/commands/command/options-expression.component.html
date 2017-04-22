@@ -1,0 +1,11 @@
+<span class="options">
+  <span *ngIf="holder.options.length === 0">[options]</span>
+  <span *ngIf="holder.getCombinedOptions().length > 0">-</span>
+  <span *ngFor="let op of holder.getCombinedOptions()">
+    <span>{{ op.withoutHyphen }}</span>
+  </span>
+  <span *ngFor="let op of holder.getIsolatedOptions()">
+    <span>{{ op.name }}</span>
+    <span *ngIf="op.argument">{{ op.argument.input }}</span>
+  </span>
+</span>
