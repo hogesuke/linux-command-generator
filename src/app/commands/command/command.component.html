@@ -5,7 +5,7 @@
   </div>
 
   <div class="command-grammar monospaced">
-    <span>{{ command.name }}</span>
+    <div class="name">{{ command.name }}</div>
     <app-options-expression *ngIf="command.hasOption()"
                             [holder]="command.optionHolder">
     </app-options-expression>

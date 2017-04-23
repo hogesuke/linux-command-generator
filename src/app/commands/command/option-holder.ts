@@ -18,6 +18,14 @@ export class OptionHolder {
     });
   }
 
+  hasOption(): boolean {
+    return this.options.length > 0;
+  }
+
+  hasCombinedOption(): boolean {
+    return this.getCombinedOptions().length > 0;
+  }
+
   getCombinedOptions(): Option[] {
     return this.options.filter(op => {
       return op.canCombine && op.argument === null;
