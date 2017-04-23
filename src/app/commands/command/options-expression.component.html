@@ -1,7 +1,7 @@
 <div class="options">
   <div *ngIf="!holder.hasOption()">[options]</div>
-  <div *ngIf="holder.hasCombinedOption()">-</div>
-  <div class="combined-options">
+  <div class="combined-options" *ngIf="holder.hasCombinedOption()">
+    <div>-</div>
     <div *ngFor="let op of holder.getCombinedOptions()" class="option">
       <span>{{ op.withoutHyphen }}</span>
     </div>
