@@ -1,0 +1,40 @@
+#sidemenu {
+  position: fixed;
+  height: 100%;
+  width: 250px;
+  background-color: #F4F6F7;
+  box-sizing: border-box;
+
+  ul li {
+    padding: 18px 15px;
+    font-size: 15px;
+    color: #111;
+    list-style: none;
+    border-bottom: solid 1px #ddd;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  .search {
+    margin: 15px;
+    input {
+      width: 100%;
+      padding: 10px 15px;
+      border: solid 1px #ddd;
+      border-radius: 9% / 50%;
+      font-size: 15px;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &::placeholder {
+        font-weight: 100;
+        color: #ccc;
+      }
+    }
+  }
+}
