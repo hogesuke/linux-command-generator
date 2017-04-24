@@ -5,7 +5,7 @@ import { Command } from '../commands/command/command';
 @Component({
   selector: 'app-sidemenu',
   templateUrl: './side-menu.component.html',
-  styleUrls: ['./side-menu.component.css']
+  styleUrls: ['./side-menu.component.scss']
 })
 
 export class SideMenuComponent implements OnInit {
