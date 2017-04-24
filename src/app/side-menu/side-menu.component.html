@@ -1,4 +1,9 @@
 <div id="sidemenu">
+  <div class="search">
+    <input type="text"
+           class="font-awesome"
+           placeholder="&#xF002;">
+  </div>
   <ul>
     <a routerLink="/commands/{{ command.name }}" *ngFor="let command of commands">
       <li>
