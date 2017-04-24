@@ -18,7 +18,8 @@ export class CommandService {
         new Option('-a', 'タイムスタンプをコピー元と同じにする', null, true, '-a'),
         new Option('-b', 'ほげほげふがふが', null, true, '-b'),
         new Option('--dry-run', 'ほげほげふがふが', null, false, '--dry-run'),
-        new Option('--hoge', 'ほげほげふがふが', new Argument('foo', 'ぴよぴよ', true, './foo'), false, '--dry-run')
+        new Option('--hoge', 'ほげほげふがふが', new Argument('foo', 'ぴよぴよ', true, './foo'), false, '--hoge ./aaa'),
+        new Option('--fuga', 'ほげほげふがふが', new Argument('bar', 'ぴよぴよ', true, './foo'), false, '--fuga ./bbb')
       ]
     ),
     new Command(

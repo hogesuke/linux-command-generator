@@ -7,8 +7,11 @@
     float: left;
   }
 
-  .combined-options {
+  .block:not(:last-of-type) {
     margin-right: 5px;
+  }
+
+  .combined-options {
 
     .option:not(:last-child) {
       margin-right: 2px;
@@ -19,6 +22,22 @@
 
     .option:not(:last-child) {
       margin-right: 5px;
+    }
+  }
+
+  .with-arg-options {
+
+    .option {
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+      .name {
+        margin-right: 5px;
+      }
+      .arg:not(:last-child) {
+        margin-right: 5px;
+      }
     }
   }
 }
