@@ -45,13 +45,22 @@ table {
 
   .copy-button {
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 0;
     border: none;
-    padding: 10px 20px;
-    background-color: #3e5e79;
-    font-size: 14px;
-    color: #f4f4f5;
+    padding: 8px 15px;
+    background-color: #dadbde;
+    font-size: 12px;
+    color: #5c5f67;
+
+    &:focus {
+      outline: 0;
+    }
+    &:hover {
+      background-color: #bdbec1;
+      color: #fff;
+      cursor: pointer;
+    }
   }
 }
 
