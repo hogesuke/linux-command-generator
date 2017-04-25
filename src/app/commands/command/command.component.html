@@ -4,7 +4,7 @@
     <span>{{ command.description }}</span>
   </div>
 
-  <div class="command-grammar monospaced">
+  <div id="grammar" class="monospaced">
     <div class="name">{{ command.name }}</div>
     <app-options-expression *ngIf="command.hasOption()"
                             [holder]="command.optionHolder">

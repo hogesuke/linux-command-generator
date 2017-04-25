@@ -20,7 +20,7 @@ table {
   font-size: 14px;
 }
 
-.command-grammar {
+#grammar {
   position: relative;
   overflow: hidden;
   margin-bottom: 50px;
@@ -41,6 +41,17 @@ table {
   .name {
     float: left;
     margin-right: 10px;
+  }
+
+  .copy-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border: none;
+    padding: 10px 20px;
+    background-color: #3e5e79;
+    font-size: 14px;
+    color: #f4f4f5;
   }
 }
 
