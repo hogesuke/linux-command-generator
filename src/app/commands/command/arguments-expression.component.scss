@@ -1,0 +1,17 @@
+.args {
+  float: left;
+  color: #5587d6;
+
+  > div {
+    float: left;
+
+    span {
+      margin-right: 10px;
+    }
+
+    &:last-child span {
+      margin-right: 0;
+    }
+  }
+}
+

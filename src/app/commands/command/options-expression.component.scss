@@ -1,0 +1,43 @@
+.options {
+  float: left;
+  margin-right: 10px;
+  color: #35bb21;
+
+  div {
+    float: left;
+  }
+
+  .block:not(:last-of-type) {
+    margin-right: 5px;
+  }
+
+  .combined-options {
+
+    .option:not(:last-child) {
+      margin-right: 2px;
+    }
+  }
+
+  .isolated-options {
+
+    .option:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  .with-arg-options {
+
+    .option {
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+      .name {
+        margin-right: 5px;
+      }
+      .arg:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -4,36 +4,27 @@
     <span>{{ command.description }}</span>
   </div>
 
-  <div class="command-grammar">
-    <span>{{ command.name }}</span>
-    <span class="options" *ngIf="command.hasOption()">
-      <span *ngIf="command.optionHolder.options.length === 0">[options]</span>
-      <span *ngIf="command.optionHolder.getCombinedOptions().length > 0">-</span>
-      <span *ngFor="let op of command.optionHolder.getCombinedOptions()">
-        <span>{{ op.withoutHyphen }}</span>
-      </span>
-      <span *ngFor="let op of command.optionHolder.getIsolatedOptions()">
-        <span>{{ op.name }}</span>
-        <span *ngIf="op.argument">{{ op.argument.input }}</span>
-      </span>
-    </span>
-    <span class="args" *ngIf="command.hasArg()">
-      <span *ngFor="let arg of command.args">
-        <span *ngIf="arg.input">{{ arg.input }}</span>
-        <span *ngIf="!arg.input"><{{ arg.name }}></span>
-      </span>
-    </span>
+  <div id="grammar" class="monospaced">
+    <div class="name">{{ command.name }}</div>
+    <app-options-expression *ngIf="command.hasOption()"
+                            [holder]="command.optionHolder">
+    </app-options-expression>
+    <app-arguments-expression *ngIf="command.hasArg()"
+                              [args]="command.args">
+    </app-arguments-expression>
+    <button class="copy-button">COPY</button>
   </div>
 
   <div id="block-arg">
     <h3>引数</h3>
     <table class="arg-table">
       <tr *ngFor="let arg of command.args">
-        <td class="arg-name">{{ arg.name }}</td>
+        <td class="arg-name monospaced">{{ arg.name }}</td>
         <td class="arg-description">{{ arg.description }}</td>
         <td class="arg-input">
           <input type="text"
-                 placeholder="{{ arg.sample }}"
+                 class="font-awesome"
+                 placeholder="&#xF040;  {{ arg.sample }}"
                  [(ngModel)]="arg.input"
                  spellcheck="false">
         </td>
@@ -46,7 +37,7 @@
     <table class="option-table">
       <tbody>
       <tr *ngFor="let option of command.options" (click)="command.optionHolder.push(option)">
-        <td class="option-name">{{ option.name }}</td>
+        <td class="option-name monospaced">{{ option.name }}</td>
         <td>{{ option.description }}</td>
       </tr>
       </tbody>

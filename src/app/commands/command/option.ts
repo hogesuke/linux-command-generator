@@ -18,4 +18,12 @@ export class Option {
   get withoutHyphen(): string {
     return this.name.replace(/^-+/, '');
   }
+
+  get nameWithArgument(): string {
+    if (!this.argument) { return this.name; }
+
+    const input = this.argument.input ? this.argument.input : `<${this.argument.name}>`;
+
+    return `${this.name} ${input}`;
+  }
 }

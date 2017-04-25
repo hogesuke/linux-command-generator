@@ -1,0 +1,21 @@
+<div class="options">
+  <div *ngIf="!holder.hasOption()">[options]</div>
+  <div class="combined-options block" *ngIf="holder.hasCombinedOption()">
+    <div>-</div>
+    <div *ngFor="let op of holder.combinedOptions" class="option">
+      <span>{{ op.withoutHyphen }}</span>
+    </div>
+  </div>
+  <div class="isolated-options block" *ngIf="holder.hasIsolatedOptions()">
+    <div *ngFor="let op of holder.isolatedOptions" class="option">
+      <span>{{ op.name }}</span>
+    </div>
+  </div>
+  <div class="with-arg-options block" *ngIf="holder.hasWithArgOptions()">
+    <div *ngFor="let op of holder.withArgOptions" class="option">
+      <div class="name">{{ op.name }}</div>
+      <div *ngIf="op.argument.input" class="arg">{{ op.argument.input }}</div>
+      <div *ngIf="!op.argument.input" class="arg"><{{ op.argument.name }}></div>
+    </div>
+  </div>
+</div>

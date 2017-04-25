@@ -1,0 +1,7 @@
+<div class="args">
+  <div *ngFor="let arg of args">
+    <span *ngIf="arg.input">{{ arg.input }}</span>
+    <span *ngIf="!arg.input"><{{ arg.name }}></span>
+  </div>
+</div>
+
