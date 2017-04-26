@@ -2,10 +2,11 @@
   <div class="search">
     <input type="text"
            class="font-awesome"
-           placeholder="&#xF002;">
+           placeholder="&#xF002;"
+           [(ngModel)]="searchText">
   </div>
   <ul>
-    <a routerLink="/commands/{{ command.name }}" *ngFor="let command of commands">
+    <a routerLink="/commands/{{ command.name }}" *ngFor="let command of filteredCommands">
       <li>
         <span>{{ command.name }}</span>
       </li>

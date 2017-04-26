@@ -22,7 +22,7 @@ export class CommandComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.command = this.commandService.getCommand(params['name']);
+      this.command = this.commandService.find(params['name']);
     });
 
     new Clipboard('.copy-button', {

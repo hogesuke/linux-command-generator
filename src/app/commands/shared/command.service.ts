@@ -35,11 +35,16 @@ export class CommandService {
     )
   ];
 
-  getCommands(): Command[] {
+  get all(): Command[] {
     return this.commands;
   }
 
-  getCommand(name: string): Command {
+  filter(text: string): Command[] {
+    if (!text) { return this.commands; }
+    return this.commands.filter(a => a.name.indexOf(text) !== -1);
+  }
+
+  find(name: string): Command {
     return this.commands.find(a => a.name === name);
   }
 }
