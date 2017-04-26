@@ -1,3 +1,5 @@
+@import '../shared/variables';
+
 label {
   font-size: 16px;
 }
@@ -65,7 +67,7 @@ table {
   }
 }
 
-@mixin arg-input {
+@mixin arg-input($color) {
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
@@ -82,7 +84,7 @@ table {
 
   &:focus {
     outline: 0;
-    border-bottom-color: rgba(85, 135, 214, 1.0);
+    border-bottom-color: $color;;
 
     &::placeholder {
       color: transparent;
@@ -108,7 +110,7 @@ table {
       padding: 5px;
 
       input[type=text] {
-        @include arg-input;
+        @include arg-input($arg-color);
       }
     }
   }
@@ -125,9 +127,10 @@ table {
     }
     .option-input {
       width: 40%;
+      padding: 5px;
 
       input[type=text] {
-        @include arg-input;
+        @include arg-input($option-color);
       }
     }
 
