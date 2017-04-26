@@ -16,7 +16,7 @@
   </div>
 
   <div id="block-arg">
-    <h3>引数</h3>
+    <h3>Arguments</h3>
     <table class="arg-table">
       <tr *ngFor="let arg of command.args">
         <td class="arg-name monospaced">{{ arg.name }}</td>
@@ -33,7 +33,7 @@
   </div>
 
   <div id="block-option">
-    <h3>オプション</h3>
+    <h3>Options</h3>
     <table class="option-table">
       <tbody>
       <tr *ngFor="let op of command.options" (click)="command.optionHolder.push(op)">
