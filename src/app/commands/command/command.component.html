@@ -44,6 +44,8 @@
         </td>
         <td class="option-input" *ngIf="op.argument">
           <input type="text"
+                 class="font-awesome"
+                 placeholder="&#xF040;  {{ op.argument.sample }}"
                  [(ngModel)]="op.argument.input"
                  spellcheck="false">
         </td>

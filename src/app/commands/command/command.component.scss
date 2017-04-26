@@ -65,6 +65,31 @@ table {
   }
 }
 
+@mixin arg-input {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px rgba(26, 26, 78, 0.1);
+  font-size: 16px;
+  font-weight: 100;
+
+  &::placeholder {
+    font-weight: 100;
+    color: #ccc;
+  }
+
+  &:focus {
+    outline: 0;
+    border-bottom-color: rgba(85, 135, 214, 1.0);
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
 #block-arg {
   margin-bottom: 50px;
 
@@ -83,28 +108,7 @@ table {
       padding: 5px;
 
       input[type=text] {
-        width: 100%;
-        padding: 5px;
-        box-sizing: border-box;
-        background-color: transparent;
-        border: none;
-        border-bottom: solid 2px rgba(26, 26, 78, 0.1);
-        font-size: 16px;
-        font-weight: 100;
-
-        &::placeholder {
-          font-weight: 100;
-          color: #ccc;
-        }
-
-        &:focus {
-          outline: 0;
-          border-bottom-color: rgba(85, 135, 214, 1.0);
-
-          &::placeholder {
-            color: transparent;
-          }
-        }
+        @include arg-input;
       }
     }
   }
@@ -121,6 +125,10 @@ table {
     }
     .option-input {
       width: 40%;
+
+      input[type=text] {
+        @include arg-input;
+      }
     }
 
     tr {
