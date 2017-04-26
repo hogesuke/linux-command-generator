@@ -1,5 +1,7 @@
 import { Option } from './option';
 
+import _ from 'lodash';
+
 export class OptionHolder {
   options: Option[];
 
@@ -32,6 +34,10 @@ export class OptionHolder {
 
   hasWithArgOptions(): boolean {
     return this.withArgOptions.length > 0;
+  }
+
+  include(option: Option): boolean {
+    return _.includes(this.options, option);
   }
 
   get combinedOptions(): Option[] {
