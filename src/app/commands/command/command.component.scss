@@ -98,16 +98,16 @@ table {
   .arg-table {
 
     .arg-name {
-      width: 20%;
+      width: 25%;
       padding-left: 20px;
     }
 
     .arg-description {
-      width: 40%;
+      width: 45%;
     }
 
     .arg-input {
-      width: 40%;
+      width: 30%;
       padding: 5px;
 
       input[type=text] {
@@ -133,7 +133,7 @@ table {
 
     .option-name {
       position: relative;
-      width: 20%;
+      width: 25%;
       padding-left: 23px;
       color: #4777d4;
 
@@ -151,10 +151,10 @@ table {
       }
     }
     .option-description {
-      width: 40%;
+      width: 45%;
     }
     .option-input {
-      width: 40%;
+      width: 30%;
       padding: 5px;
 
       input[type=text] {
