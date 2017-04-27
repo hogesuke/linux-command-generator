@@ -117,13 +117,13 @@ table {
   }
 }
 
-@mixin row-mark($icon, $opacity) {
+@mixin row-mark($icon, $color, $opacity) {
   &:before {
     position: absolute;
     left: 3px;
     content: $icon;
     font-family: FontAwesome;
-    color: $option-color;
+    color: $color;
     opacity: $opacity;
   }
 }
@@ -140,13 +140,13 @@ table {
       &:hover {
         cursor: pointer;
         text-decoration: underline;
-        @include row-mark("\f055", 0.4);
+        @include row-mark("\f055", #000, 0.15);
       }
       &.active {
-        @include row-mark("\f058", 0.8);
+        @include row-mark("\f058", $option-color, 0.8);
 
-        &:hover:before {
-          opacity: 0.4;
+        &:hover {
+          @include row-mark("\f058", $option-color, 0.4);
         }
       }
     }
