@@ -37,7 +37,7 @@
     <table class="option-table">
       <tbody>
       <tr *ngFor="let op of command.options"
-          (click)="command.optionHolder.push(op)"
+          (click)="command.optionHolder.toggle(op)"
           [class.active]="command.optionHolder.include(op)">
         <td class="option-name monospaced">{{ op.name }}</td>
         <td class="option-description"

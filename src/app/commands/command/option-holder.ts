@@ -15,9 +15,17 @@ export class OptionHolder {
   }
 
   remove(option: Option): void {
-    this.options.filter(op => {
+    this.options = this.options.filter(op => {
       return op.name !== option.name;
     });
+  }
+
+  toggle(option: Option): void {
+    if (this.options.some(a => a === option)) {
+      this.remove(option);
+    } else {
+      this.push(option);
+    }
   }
 
   hasOption(): boolean {
