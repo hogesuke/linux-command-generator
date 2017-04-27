@@ -36,10 +36,12 @@
     <h3>Options</h3>
     <table class="option-table">
       <tbody>
-      <tr *ngFor="let op of command.options"
-          (click)="command.optionHolder.toggle(op)"
-          [class.active]="command.optionHolder.include(op)">
-        <td class="option-name monospaced">{{ op.name }}</td>
+      <tr *ngFor="let op of command.options">
+        <td class="option-name monospaced"
+            [class.active]="command.optionHolder.include(op)"
+            (click)="command.optionHolder.toggle(op)">
+          {{ op.name }}
+        </td>
         <td class="option-description"
             [attr.colspan]="op.argument ? 1 : 2">
           {{ op.description }}
