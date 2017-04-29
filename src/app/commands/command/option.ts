@@ -1,4 +1,5 @@
 import { Argument } from './argument';
+import { IOptionParams } from './command-generator';
 
 export class Option {
   name: string;
@@ -7,12 +8,12 @@ export class Option {
   canCombine: boolean;
   sample: string;
 
-  constructor(name: string, description: string, argument: Argument, canCombine: boolean, sample: string) {
-    this.name        = name;
-    this.description = description;
-    this.argument    = argument;
-    this.canCombine  = canCombine;
-    this.sample      = sample;
+  constructor(params: IOptionParams) {
+    this.name        = params.name;
+    this.description = params.description;
+    this.canCombine  = params.canCombine;
+    this.sample      = params.sample;
+    this.argument    = params.argument ? new Argument(params.argument) : null;
   }
 
   get withoutHyphen(): string {

@@ -1,6 +1,7 @@
 import { Option } from './option';
 import { Argument } from './argument';
 import { OptionHolder } from './option-holder';
+import { ICommandParams, IArgumentParams, IOptionParams } from './command-generator';
 
 import _ from 'lodash';
 
@@ -11,11 +12,11 @@ export class Command {
   options: Option[];
   optionHolder: OptionHolder;
 
-  constructor(name: string, description: string, args: Argument[], options: Option[]) {
-    this.name         = name;
-    this.description  = description;
-    this.args         = args;
-    this.options      = options;
+  constructor(params: ICommandParams) {
+    this.name         = params.name;
+    this.description  = params.description;
+    this.args         = params.args.map((p: IArgumentParams) => new Argument(p));
+    this.options      = params.options.map((p: IOptionParams) => new Option(p));
     this.optionHolder = new OptionHolder();
   }
 
