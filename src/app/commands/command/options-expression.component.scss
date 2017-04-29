@@ -1,9 +1,17 @@
 @import '../shared/variables';
 
-.options {
+@mixin options {
   float: left;
   margin-right: 10px;
   color: $option-color;
+}
+
+.options-empty {
+  @include options;
+}
+
+.options {
+  @include options;
 
   div {
     float: left;
