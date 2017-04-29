@@ -16,7 +16,7 @@
   </div>
 
   <div id="block-arg">
-    <h3>引数</h3>
+    <h3>Arguments</h3>
     <table class="arg-table">
       <tr *ngFor="let arg of command.args">
         <td class="arg-name monospaced">{{ arg.name }}</td>
@@ -33,12 +33,26 @@
   </div>
 
   <div id="block-option">
-    <h3>オプション</h3>
+    <h3>Options</h3>
     <table class="option-table">
       <tbody>
-      <tr *ngFor="let option of command.options" (click)="command.optionHolder.push(option)">
-        <td class="option-name monospaced">{{ option.name }}</td>
-        <td>{{ option.description }}</td>
+      <tr *ngFor="let op of command.options">
+        <td class="option-name monospaced"
+            [class.active]="command.optionHolder.include(op)"
+            (click)="command.optionHolder.toggle(op)">
+          {{ op.name }}
+        </td>
+        <td class="option-description"
+            [attr.colspan]="op.argument ? 1 : 2">
+          {{ op.description }}
+        </td>
+        <td class="option-input" *ngIf="op.argument">
+          <input type="text"
+                 class="font-awesome"
+                 placeholder="&#xF040;  {{ op.argument.sample }}"
+                 [(ngModel)]="op.argument.input"
+                 spellcheck="false">
+        </td>
       </tr>
       </tbody>
     </table>

@@ -1,5 +1,7 @@
 import { Option } from './option';
 
+import _ from 'lodash';
+
 export class OptionHolder {
   options: Option[];
 
@@ -13,9 +15,17 @@ export class OptionHolder {
   }
 
   remove(option: Option): void {
-    this.options.filter(op => {
+    this.options = this.options.filter(op => {
       return op.name !== option.name;
     });
+  }
+
+  toggle(option: Option): void {
+    if (this.options.some(a => a === option)) {
+      this.remove(option);
+    } else {
+      this.push(option);
+    }
   }
 
   hasOption(): boolean {
@@ -32,6 +42,10 @@ export class OptionHolder {
 
   hasWithArgOptions(): boolean {
     return this.withArgOptions.length > 0;
+  }
+
+  include(option: Option): boolean {
+    return _.includes(this.options, option);
   }
 
   get combinedOptions(): Option[] {

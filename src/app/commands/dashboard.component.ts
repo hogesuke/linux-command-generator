@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   constructor(private commandService: CommandService) { }
 
   ngOnInit(): void {
-    this.commands = this.commandService.getCommands();
+    this.commands = this.commandService.all;
   }
 
 }

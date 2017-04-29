@@ -1,7 +1,9 @@
+@import '../shared/variables';
+
 .options {
   float: left;
   margin-right: 10px;
-  color: #35bb21;
+  color: $option-color;
 
   div {
     float: left;
