@@ -9,13 +9,13 @@ import { OptionHolder } from './option-holder';
   styleUrls: [ './options-expression.component.scss' ],
   animations: [
     trigger('enter', [
-      state('in', style({ transform: 'scaleX(1)' })),
+      state('in', style({ transform: 'translateX(0)', opacity: 1 })),
       transition(':enter', [
-        style({transform: 'scaleX(0)'}),
-        animate(200)
+        style({ transform: 'translateX(-5px)', opacity: 0 }),
+        animate(300)
       ]),
       transition(':leave', [
-        animate(200, style({transform: 'scaleX(0)'}))
+        animate(300, style({ transform: 'translateX(-5px)', opacity: 0 }))
       ])
     ])
   ]
