@@ -2,7 +2,9 @@
 
 @mixin options {
   float: left;
+  padding-bottom: 5px;
   margin-right: 10px;
+  border-bottom: solid 2px rgba(53, 187, 33, 0.4);
   color: $option-color;
 }
 
@@ -18,7 +20,7 @@
   }
 
   .block:not(:last-of-type) {
-    margin-right: 5px;
+    margin-right: 7px;
   }
 
   .combined-options {
@@ -31,7 +33,7 @@
   .isolated-options {
 
     .option:not(:last-child) {
-      margin-right: 5px;
+      margin-right: 7px;
     }
   }
 
@@ -40,13 +42,13 @@
     .option {
 
       &:not(:last-child) {
-        margin-right: 5px;
+        margin-right: 7px;
       }
       .name {
-        margin-right: 5px;
+        margin-right: 7px;
       }
       .arg:not(:last-child) {
-        margin-right: 5px;
+        margin-right: 7px;
       }
     }
   }

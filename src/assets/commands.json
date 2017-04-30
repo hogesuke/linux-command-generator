@@ -67,8 +67,22 @@
         "name": "option2",
         "description": "option2の説明",
         "argument": null,
-        "canCombine": true,
+        "canCombine": false,
         "sample": "option2 sample"
+      },
+      {
+        "name": "-a",
+        "description": "-aの説明",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-a sample"
+      },
+      {
+        "name": "-b",
+        "description": "-bの説明",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-b sample"
       }
     ]
   }
