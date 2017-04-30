@@ -32,5 +32,44 @@
         "sample": "option2 sample"
       }
     ]
+  },
+  {
+    "name": "scp",
+    "description": "説明だよ",
+    "args": [
+      {
+        "name": "hoge1",
+        "description": "argument1の説明",
+        "required": true,
+        "sample": "hoge1 sample"
+      },
+      {
+        "name": "hoge2",
+        "description": "argument2の説明",
+        "required": true,
+        "sample": "hoge2 sample"
+      }
+    ],
+    "options": [
+      {
+        "name": "option1",
+        "description": "option1の説明",
+        "argument": {
+          "name": "hoge1",
+          "description": "argument1の説明",
+          "required": true,
+          "sample": "hoge1 sample"
+        },
+        "canCombine": false,
+        "sample": "option1 sample"
+      },
+      {
+        "name": "option2",
+        "description": "option2の説明",
+        "argument": null,
+        "canCombine": true,
+        "sample": "option2 sample"
+      }
+    ]
   }
 ]
