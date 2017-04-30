@@ -26,8 +26,8 @@ export class CommandService {
     return this.commands.find(a => a.name === name);
   }
 
-  load(): void {
-    this.loadSeeds().then(seeds => {
+  load(): Promise<void> {
+    return this.loadSeeds().then(seeds => {
       this.commands = CommandGenerator.generate(seeds);
     });
   }

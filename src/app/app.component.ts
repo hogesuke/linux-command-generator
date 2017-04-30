@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommandService } from './commands/shared/command.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,4 @@ import { CommandService } from './commands/shared/command.service';
 })
 
 export class AppComponent {
-
-  constructor(private commandService: CommandService) {
-    commandService.load();
-  }
 }
