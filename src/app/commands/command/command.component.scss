@@ -151,7 +151,11 @@ table {
       }
     }
     .option-description {
-      width: 45%;
+      width: 75%;
+
+      &.with-input {
+        width: 45%;
+      }
     }
     .option-input {
       width: 30%;

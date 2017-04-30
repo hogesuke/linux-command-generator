@@ -43,6 +43,7 @@
           {{ op.name }}
         </td>
         <td class="option-description"
+            [class.with-input]="op.argument"
             [attr.colspan]="op.argument ? 1 : 2">
           {{ op.description }}
         </td>
