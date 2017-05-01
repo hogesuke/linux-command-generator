@@ -1,24 +1,24 @@
 @import '../shared/variables';
 
 @mixin options {
-  float: left;
-  margin-right: 10px;
+  display: flex;
   color: $option-color;
 }
 
 .options-empty {
   @include options;
+  margin-right: 10px;
 }
 
 .options {
   @include options;
 
   div {
-    float: left;
+    display: inherit;
   }
 
-  .block:not(:last-of-type) {
-    margin-right: 7px;
+  .block > div:last-of-type {
+    margin-right: 10px;
   }
 
   .combined-options {
@@ -43,10 +43,7 @@
         margin-right: 7px;
       }
       .name {
-        margin-right: 7px;
-      }
-      .arg:not(:last-child) {
-        margin-right: 7px;
+        margin-right: 5px;
       }
     }
   }

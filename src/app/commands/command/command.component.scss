@@ -26,6 +26,7 @@ table {
 #grammar {
   position: relative;
   overflow: hidden;
+  display: flex;
   margin-bottom: 50px;
   padding: 35px 20px 35px 50px;
   background-color: #f4f4f5;
@@ -42,7 +43,6 @@ table {
   }
 
   .name {
-    float: left;
     margin-right: 10px;
   }
 
