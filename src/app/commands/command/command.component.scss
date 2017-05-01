@@ -46,15 +46,16 @@ table {
     margin-right: 10px;
   }
 
-  .copy-button {
+  @mixin button($num) {
     position: absolute;
     top: 0;
-    right: 0;
+    right: ($num - 1) * 30px;
+    height: 30px;
+    width: 30px;
     border: none;
-    padding: 7px 12px;
-    background-color: #dadbde;
-    font-size: 11px;
-    color: #5c5f67;
+    background-color: transparent;
+    font-size: 14px;
+    color: #888888;
 
     &:focus {
       outline: 0;
@@ -64,6 +65,18 @@ table {
       color: #fff;
       cursor: pointer;
     }
+  }
+
+  .copy-button {
+    @include button(1);
+  }
+
+  .erase-button {
+    @include button(2);
+  }
+
+  .share-button {
+    @include button(3);
   }
 }
 
