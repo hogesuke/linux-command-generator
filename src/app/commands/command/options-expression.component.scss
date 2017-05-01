@@ -2,9 +2,7 @@
 
 @mixin options {
   float: left;
-  padding-bottom: 5px;
   margin-right: 10px;
-  border-bottom: solid 2px rgba(53, 187, 33, 0.4);
   color: $option-color;
 }
 
