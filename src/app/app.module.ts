@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -33,7 +33,15 @@ import { ArgumentsExpressionComponent } from './commands/command/arguments-expre
       { path: 'commands/:name', component: CommandComponent }
     ])
   ],
-  providers: [ CommandService ],
+  providers: [
+    CommandService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (commandService: CommandService) => () => commandService.load(),
+      deps: [ CommandService ],
+      multi: true
+    }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

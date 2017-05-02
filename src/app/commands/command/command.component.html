@@ -12,7 +12,15 @@
     <app-arguments-expression *ngIf="command.hasArg()"
                               [args]="command.args">
     </app-arguments-expression>
-    <button class="copy-button">COPY</button>
+    <button class="copy-button">
+      <i class="fa fa-files-o" aria-hidden="true"></i>
+    </button>
+    <button class="clear-button" (click)="command.clear()">
+      <i class="fa fa-eraser" aria-hidden="true"></i>
+    </button>
+    <button class="share-button">
+      <i class="fa fa-share-alt" aria-hidden="true"></i>
+    </button>
   </div>
 
   <div id="block-arg">
@@ -43,6 +51,7 @@
           {{ op.name }}
         </td>
         <td class="option-description"
+            [class.with-input]="op.argument"
             [attr.colspan]="op.argument ? 1 : 2">
           {{ op.description }}
         </td>

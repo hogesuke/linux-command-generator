@@ -1,39 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/toPromise';
 
 import { Command } from '../command/command';
-import { Option } from '../command/option';
-import { Argument } from '../command/argument';
+import { CommandGenerator, ICommandParams } from '../command/command-generator';
 
 @Injectable()
 export class CommandService {
-  commands: Command[] = [
-    new Command(
-      'rsync',
-      'ファイル同期を行うコマンド',
-      [
-        new Argument('source', 'コピー元', true, './source'),
-        new Argument('destination', 'コピー先', true, './dest')
-      ],
-      [
-        new Option('-a', 'タイムスタンプをコピー元と同じにする', null, true, '-a'),
-        new Option('-b', 'ほげほげふがふが', null, true, '-b'),
-        new Option('--dry-run', 'ほげほげふがふが', null, false, '--dry-run'),
-        new Option('--hoge', 'ほげほげふがふが', new Argument('foo', 'ぴよぴよ', true, './foo'), false, '--hoge ./aaa'),
-        new Option('--fuga', 'ほげほげふがふが', new Argument('bar', 'ぴよぴよ', true, './foo'), false, '--fuga ./bbb')
-      ]
-    ),
-    new Command(
-      'scp',
-      'ローカルとリモート間でファイル転送するコマンド',
-      [
-        new Argument('source', 'コピー元', true, './source'),
-        new Argument('destination', 'コピー先', true, './dest')
-      ],
-      [
-        new Option('-p', 'タイムスタンプ、モードをコピー元と同じにする', null, true, '-p')
-      ]
-    )
-  ];
+  commands: Command[] = [];
+
+  constructor(private http: Http) {
+  }
 
   get all(): Command[] {
     return this.commands;
@@ -46,5 +24,31 @@ export class CommandService {
 
   find(name: string): Command {
     return this.commands.find(a => a.name === name);
+  }
+
+  load(): Promise<void> {
+    return this.loadSeeds().then(seeds => {
+      this.commands = CommandGenerator.generate(seeds);
+    });
+  }
+
+  private loadSeeds(): Promise<ICommandParams[]> {
+    return this.http.get('/assets/commands.json')
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
+  }
+
+  private extractData(res: Response): ICommandParams[] {
+    if (res.status < 200 || res.status >= 300) {
+      throw new Error('Bad response status: ' + res.status);
+    }
+    return (res.json() || []) as ICommandParams[];
+  }
+
+  private handleError (error: any) {
+    const errMsg = error.message || 'Server error';
+    console.error(errMsg); // log to console instead
+    return Observable.throw(errMsg);
   }
 }

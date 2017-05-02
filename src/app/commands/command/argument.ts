@@ -1,4 +1,5 @@
 import { Input } from '@angular/core';
+import { IArgumentParams } from './command-generator';
 
 export class Argument {
   name: string;
@@ -7,10 +8,14 @@ export class Argument {
   sample: string;
   @Input() input: string;
 
-  constructor(name: string, description: string, required: boolean, sample: string) {
-    this.name        = name;
-    this.description = description;
-    this.required    = required;
-    this.sample      = sample;
+  constructor(params: IArgumentParams) {
+    this.name        = params.name;
+    this.description = params.description;
+    this.required    = params.required;
+    this.sample      = params.sample;
+  }
+
+  clear(): void {
+    this.input = '';
   }
 }
