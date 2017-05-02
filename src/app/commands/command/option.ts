@@ -16,6 +16,10 @@ export class Option {
     this.argument    = params.argument ? new Argument(params.argument) : null;
   }
 
+  clear(): void {
+    if (this.argument) { this.argument.clear(); }
+  }
+
   get withoutHyphen(): string {
     return this.name.replace(/^-+/, '');
   }

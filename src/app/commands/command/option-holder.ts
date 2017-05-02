@@ -48,6 +48,10 @@ export class OptionHolder {
     return _.includes(this.options, option);
   }
 
+  clear(): void {
+    this.options = [];
+  }
+
   get combinedOptions(): Option[] {
     return this.options.filter(op => {
       return op.canCombine && op.argument === null;

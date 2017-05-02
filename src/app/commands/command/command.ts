@@ -28,6 +28,12 @@ export class Command {
     return this.args && this.args.length > 0;
   }
 
+  clear(): void {
+    this.args.forEach(a => a.clear());
+    this.options.forEach(a => a.clear());
+    this.optionHolder.clear();
+  }
+
   get sentence(): string {
     let sentence = this.name;
 

@@ -14,4 +14,8 @@ export class Argument {
     this.required    = params.required;
     this.sample      = params.sample;
   }
+
+  clear(): void {
+    this.input = '';
+  }
 }
