@@ -13,9 +13,9 @@ import { CommandComponent } from './commands/command/command.component';
 import { OptionsExpressionComponent } from './commands/command/options-expression.component';
 import { ArgumentsExpressionComponent } from './commands/command/arguments-expression.component';
 
-const commandServiceFactory = (commandService: CommandService) => {
+export function commandServiceFactory(commandService: CommandService) {
   return () => commandService.load();
-};
+}
 
 @NgModule({
   declarations: [
