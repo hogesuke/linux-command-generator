@@ -69,6 +69,31 @@ table {
 
   .copy-button {
     @include button(1);
+
+    overflow: hidden;
+    text-align: center;
+
+    span {
+      transition:all .5s ease;
+      z-index:2;
+      position:relative;
+      line-height: 30px;
+    }
+    .eff {
+      height: 30px;
+      width: 30px;
+      top: -30px;
+      background: #3a6293;
+      position: absolute;
+      transition: all .2s ease;
+      z-index:1;
+    }
+    &:active .eff {
+      top:0;
+    }
+    &:active span {
+      color:#fff;
+    }
   }
 
   .clear-button {

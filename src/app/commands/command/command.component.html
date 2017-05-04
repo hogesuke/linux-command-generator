@@ -12,9 +12,12 @@
     <app-arguments-expression *ngIf="command.hasArg()"
                               [args]="command.args">
     </app-arguments-expression>
-    <button class="copy-button">
-      <i class="fa fa-files-o" aria-hidden="true"></i>
-    </button>
+    <div class="copy-button">
+      <div class="eff"></div>
+      <span>
+        <i class="fa fa-files-o" aria-hidden="true"></i>
+      </span>
+    </div>
     <button class="clear-button" (click)="command.clear()">
       <i class="fa fa-eraser" aria-hidden="true"></i>
     </button>
