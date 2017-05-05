@@ -47,53 +47,63 @@ table {
   }
 
   @mixin button($num) {
+    overflow: hidden;
     position: absolute;
     top: 0;
     right: ($num - 1) * 30px;
     height: 30px;
     width: 30px;
     border: none;
+    box-sizing: border-box;
+    padding: 0 6px;
     background-color: transparent;
     font-size: 14px;
     color: #888888;
+    text-align: center;
+    transition: color 0.3s ease-out;
+
+    i {
+      position: relative;
+      display: block;
+      line-height: 30px;
+      background-color: transparent;
+      z-index: 2;
+    }
+
+    &::before{
+      position: absolute;
+      content:'';
+      border-radius: 50%;
+      display: block;
+      width: 30px * 2;
+      height: 30px * 2;
+      line-height: 30px*2;
+      top: (-30px / 2);
+      left: (-30px / 2);
+      text-align: center;
+      transition: box-shadow 0.3s ease-out;
+      z-index: 1;
+    }
 
     &:focus {
       outline: 0;
     }
+
     &:hover {
-      background-color: #bdbec1;
-      color: #fff;
       cursor: pointer;
+    }
+
+    &:active {
+      color: #fff;
+
+      &::before{
+        box-shadow:inset 0 0 0 30px rgb(219, 119, 139);
+      }
     }
   }
 
   .copy-button {
     @include button(1);
-
-    overflow: hidden;
-    text-align: center;
-
-    span {
-      transition:all .5s ease;
-      z-index:2;
-      position:relative;
-      line-height: 30px;
-    }
-    .eff {
-      height: 30px;
-      width: 30px;
-      top: -30px;
-      background: #3a6293;
-      position: absolute;
-      transition: all .2s ease;
-      z-index:1;
-    }
-    &:active .eff {
-      top:0;
-    }
-    &:active span {
-      color:#fff;
-    }
   }
 
   .clear-button {
