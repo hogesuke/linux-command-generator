@@ -25,8 +25,17 @@ export class CommandComponent implements OnInit {
       this.command = this.commandService.find(params['name']);
     });
 
-    new Clipboard('.copy-button', {
+    const cb = new Clipboard('.copy-button', {
       text: () => this.command.sentence
+    });
+
+    cb.on('success', () => {
+      const h: string = localStorage.getItem(`${this.command.name}_histories`);
+      const histories: Object[] = h ? JSON.parse(h) : [];
+
+      histories.push(this.command.toObject());
+
+      localStorage.setItem(`${this.command.name}_histories`, JSON.stringify(histories));
     });
   }
 }

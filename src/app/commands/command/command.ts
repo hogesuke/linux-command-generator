@@ -34,6 +34,15 @@ export class Command {
     this.optionHolder.clear();
   }
 
+  toObject(): Object {
+    return {
+      name: this.name,
+      description: this.description,
+      args: this.args.map(a => a.toObject()),
+      options: this.optionHolder.options.map(a => a.toObject())
+    };
+  }
+
   get sentence(): string {
     let sentence = this.name;
 

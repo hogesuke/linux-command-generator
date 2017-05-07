@@ -18,4 +18,14 @@ export class Argument {
   clear(): void {
     this.input = '';
   }
+
+  toObject(): Object {
+    return {
+      name: this.name,
+      description: this.description,
+      required: this.required,
+      sample: this.sample,
+      input: this.input
+    };
+  }
 }

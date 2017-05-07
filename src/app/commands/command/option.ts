@@ -20,6 +20,16 @@ export class Option {
     if (this.argument) { this.argument.clear(); }
   }
 
+  toObject(): Object {
+    return {
+      name: this.name,
+      description: this.description,
+      argument: this.argument && this.argument.toObject(),
+      canCombine: this.canCombine,
+      sample: this.sample,
+    };
+  }
+
   get withoutHyphen(): string {
     return this.name.replace(/^-+/, '');
   }
