@@ -13,6 +13,10 @@ import { CommandComponent } from './commands/command/command.component';
 import { OptionsExpressionComponent } from './commands/command/options-expression.component';
 import { ArgumentsExpressionComponent } from './commands/command/arguments-expression.component';
 
+export function commandServiceFactory(commandService: CommandService) {
+  return () => commandService.load();
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,7 @@ import { ArgumentsExpressionComponent } from './commands/command/arguments-expre
     CommandService,
     {
       provide: APP_INITIALIZER,
-      useFactory: (commandService: CommandService) => () => commandService.load(),
+      useFactory: commandServiceFactory,
       deps: [ CommandService ],
       multi: true
     }
