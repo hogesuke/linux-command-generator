@@ -23,6 +23,15 @@
     </button>
   </div>
 
+  <div id="history">
+    <h3>History</h3>
+    <table class="">
+      <tr *ngFor="let h of histories">
+        <td>{{ h.sentence }}</td>
+      </tr>
+    </table>
+  </div>
+
   <div id="block-arg">
     <h3>Arguments</h3>
     <table class="arg-table">

@@ -20,11 +20,16 @@ export interface IArgumentParams {
   description: string;
   required: boolean;
   sample: string;
+  input?: string;
 }
 
 export class CommandGenerator {
 
-  static generate(seeds: ICommandParams[]): Command[] {
-    return seeds.map(seed => new Command(seed));
+  static generate(seed: ICommandParams): Command {
+    return new Command(seed);
+  }
+
+  static generateAll(seeds: ICommandParams[]): Command[] {
+    return seeds.map(seed => this.generate(seed));
   }
 }

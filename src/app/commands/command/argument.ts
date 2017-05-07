@@ -13,13 +13,14 @@ export class Argument {
     this.description = params.description;
     this.required    = params.required;
     this.sample      = params.sample;
+    this.input       = params.input || '';
   }
 
   clear(): void {
     this.input = '';
   }
 
-  toObject(): Object {
+  toObject(): IArgumentParams {
     return {
       name: this.name,
       description: this.description,

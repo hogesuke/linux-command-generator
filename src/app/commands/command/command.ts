@@ -34,7 +34,7 @@ export class Command {
     this.optionHolder.clear();
   }
 
-  toObject(): Object {
+  toObject(): ICommandParams {
     return {
       name: this.name,
       description: this.description,

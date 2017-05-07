@@ -28,7 +28,7 @@ export class CommandService {
 
   load(): Promise<void> {
     return this.loadSeeds().then(seeds => {
-      this.commands = CommandGenerator.generate(seeds);
+      this.commands = CommandGenerator.generateAll(seeds);
     });
   }
 

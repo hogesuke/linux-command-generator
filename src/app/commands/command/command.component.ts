@@ -5,6 +5,7 @@ import Clipboard from 'clipboard';
 
 import { Command } from './command';
 import { CommandService } from '../shared/command.service';
+import { CommandGenerator, ICommandParams } from './command-generator';
 
 @Component({
   selector: 'app-command',
@@ -14,6 +15,7 @@ import { CommandService } from '../shared/command.service';
 
 export class CommandComponent implements OnInit {
   command: Command;
+  histories: Command[];
 
   constructor(
     private commandService: CommandService,
@@ -23,6 +25,8 @@ export class CommandComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.command = this.commandService.find(params['name']);
+
+      this.histories = this.getHistoryCommands();
     });
 
     const cb = new Clipboard('.copy-button', {
@@ -30,12 +34,14 @@ export class CommandComponent implements OnInit {
     });
 
     cb.on('success', () => {
-      const h: string = localStorage.getItem(`${this.command.name}_histories`);
-      const histories: Object[] = h ? JSON.parse(h) : [];
-
-      histories.push(this.command.toObject());
-
-      localStorage.setItem(`${this.command.name}_histories`, JSON.stringify(histories));
+      this.histories.push(CommandGenerator.generate(this.command.toObject()));
+      localStorage.setItem(`${this.command.name}_histories`, JSON.stringify(this.histories.map(a => a.toObject())));
     });
+  }
+
+  private getHistoryCommands(): Command[] {
+    const h: string = localStorage.getItem(`${this.command.name}_histories`);
+    const paramsArray: ICommandParams[] = h ? JSON.parse(h) : [];
+    return CommandGenerator.generateAll(paramsArray);
   }
 }

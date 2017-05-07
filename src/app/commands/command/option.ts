@@ -20,7 +20,7 @@ export class Option {
     if (this.argument) { this.argument.clear(); }
   }
 
-  toObject(): Object {
+  toObject(): IOptionParams {
     return {
       name: this.name,
       description: this.description,
