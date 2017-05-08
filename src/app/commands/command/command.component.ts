@@ -39,6 +39,10 @@ export class CommandComponent implements OnInit {
     });
   }
 
+  hasHistory(): boolean {
+    return this.histories.length > 0;
+  }
+
   private getHistoryCommands(): Command[] {
     const h: string = localStorage.getItem(`${this.command.name}_histories`);
     const paramsArray: ICommandParams[] = h ? JSON.parse(h) : [];

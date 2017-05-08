@@ -18,7 +18,7 @@
     <button class="clear-button" (click)="command.clear()">
       <i class="fa fa-eraser" aria-hidden="true"></i>
     </button>
-    <button class="history-button">
+    <button class="history-button" [class.badge]="hasHistory()">
       <i class="fa fa-history" aria-hidden="true"></i>
     </button>
   </div>

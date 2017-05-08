@@ -116,6 +116,18 @@ table {
 
   .history-button {
     @include button(3);
+
+    &.badge::after {
+      position: absolute;
+      top: 5px;
+      right: 3px;
+      height: 7px;
+      width: 7px;
+      content: '';
+      background-color: #ff8d8c;
+      color: #ffffff;
+      border-radius: 50%;
+    }
   }
 }
 
