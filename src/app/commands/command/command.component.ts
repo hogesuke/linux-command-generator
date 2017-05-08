@@ -16,6 +16,7 @@ import { CommandGenerator, ICommandParams } from './command-generator';
 export class CommandComponent implements OnInit {
   command: Command;
   histories: Command[];
+  isHistoryVisible = false;
 
   constructor(
     private commandService: CommandService,
@@ -41,6 +42,10 @@ export class CommandComponent implements OnInit {
 
   hasHistory(): boolean {
     return this.histories.length > 0;
+  }
+
+  toggleHistory(): void {
+    this.isHistoryVisible = !this.isHistoryVisible;
   }
 
   private getHistoryCommands(): Command[] {

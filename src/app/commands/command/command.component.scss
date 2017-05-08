@@ -94,7 +94,7 @@ table {
       background-color: #e7e7e7;
     }
 
-    &:active {
+    &:active, &.active {
       background-color: transparent;
       color: #fff;
       transition: 0s;
@@ -116,8 +116,10 @@ table {
 
   .history-button {
     @include button(3);
+    z-index: 1;
 
     &.badge::after {
+      z-index: 2;
       position: absolute;
       top: 5px;
       right: 3px;
@@ -128,11 +130,20 @@ table {
       color: #ffffff;
       border-radius: 50%;
     }
+
+    &.badge.active::after {
+      background-color: #fff;
+    }
   }
 }
 
 #block-history {
   margin-bottom: 50px;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
 }
 
 @mixin arg-input($color) {
