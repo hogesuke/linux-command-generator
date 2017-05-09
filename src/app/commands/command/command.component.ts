@@ -27,7 +27,7 @@ export class CommandComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.command = this.commandService.find(params['name']);
 
-      this.histories = this.getHistoryCommands();
+      this.histories = this.getHistoryCommands(this.command.name);
     });
 
     const cb = new Clipboard('.copy-button', {
@@ -48,8 +48,8 @@ export class CommandComponent implements OnInit {
     this.isHistoryVisible = !this.isHistoryVisible;
   }
 
-  private getHistoryCommands(): Command[] {
-    const h: string = localStorage.getItem(`${this.command.name}_histories`);
+  private getHistoryCommands(commandName): Command[] {
+    const h: string = localStorage.getItem(`${commandName}_histories`);
     const paramsArray: ICommandParams[] = h ? JSON.parse(h) : [];
     return CommandGenerator.generateAll(paramsArray);
   }
