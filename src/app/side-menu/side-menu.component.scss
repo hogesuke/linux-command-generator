@@ -2,7 +2,7 @@
   position: fixed;
   height: 100%;
   width: 250px;
-  background-color: #F4F6F7;
+  background-color: #F4F4F5;
   box-sizing: border-box;
 
   ul li {
@@ -10,10 +10,11 @@
     font-size: 15px;
     color: #111;
     list-style: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px #b9becf;
+    transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: #ebebeb;
+      background-color: #ededed;
     }
   }
 
@@ -23,6 +24,7 @@
 
   .search {
     margin: 15px;
+
     input {
       width: 100%;
       padding: 10px 15px;
