@@ -142,6 +142,38 @@ table {
   margin-bottom: 50px;
   display: none;
 
+  .sentence {
+    padding-left: 20px;
+    color: #4777d4;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .buttons {
+    width: 70px;
+
+    .button {
+      padding: 5px;
+      border: none;
+      background-color: transparent;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3);
+      transition: color 0.2s ease;
+    }
+
+    .button:hover {
+      color: #f17678;
+      cursor: pointer;
+    }
+
+    .button:focus {
+      outline: 0;
+    }
+  }
+
   &.visible {
     display: block;
   }

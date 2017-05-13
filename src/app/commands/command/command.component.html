@@ -27,8 +27,8 @@
     <h3>History</h3>
     <table class="history-table">
       <tr *ngFor="let h of histories">
-        <td (click)="applyHistory(h)">{{ h.sentence }}</td>
-        <td><button (click)="removeHistory(h)">REMOVE</button></td>
+        <td class="sentence" (click)="applyHistory(h)">{{ h.sentence }}</td>
+        <td class="buttons"><button class="button" (click)="removeHistory(h)">REMOVE</button></td>
       </tr>
     </table>
   </div>
