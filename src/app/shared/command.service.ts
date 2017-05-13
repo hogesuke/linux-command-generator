@@ -3,8 +3,8 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
-import { Command } from '../command/command';
-import { CommandGenerator, ICommandParams } from '../command/command-generator';
+import { Command } from '../commands/command/command';
+import { CommandGenerator, ICommandParams } from '../commands/command/command-generator';
 
 @Injectable()
 export class CommandService {

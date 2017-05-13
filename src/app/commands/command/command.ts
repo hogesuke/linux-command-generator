@@ -2,6 +2,7 @@ import { Option } from './option';
 import { Argument } from './argument';
 import { OptionHolder } from './option-holder';
 import { ICommandParams, IArgumentParams, IOptionParams } from './command-generator';
+import { ICommandInputParams } from './command-input-holder-generator';
 
 import _ from 'lodash';
 
@@ -34,12 +35,12 @@ export class Command {
     this.optionHolder.clear();
   }
 
-  toObject(): ICommandParams {
+  toObject(): ICommandInputParams {
     return {
       name: this.name,
-      description: this.description,
       args: this.args.map(a => a.toObject()),
-      options: this.optionHolder.options.map(a => a.toObject())
+      options: this.optionHolder.options.map(a => a.toObject()),
+      sentence: this.sentence
     };
   }
 

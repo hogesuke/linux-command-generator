@@ -18,12 +18,12 @@
     <button class="clear-button" (click)="command.clear()">
       <i class="fa fa-eraser" aria-hidden="true"></i>
     </button>
-    <button class="history-button" (click)="toggleHistory()" [class.badge]="hasHistory()" [ngClass]="{ active: isHistoryVisible }">
+    <button class="history-button" (click)="toggleHistory()" [class.badge]="hasHistory()" [ngClass]="{ active: visibleHisotry }">
       <i class="fa fa-history" aria-hidden="true"></i>
     </button>
   </div>
 
-  <div id="block-history" [class.visible]="isHistoryVisible">
+  <div id="block-history" [class.visible]="visibleHisotry">
     <h3>History</h3>
     <table class="">
       <tr *ngFor="let h of histories">

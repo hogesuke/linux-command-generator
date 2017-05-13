@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CommandService } from '../commands/shared/command.service';
+import { CommandService } from '../shared/command.service';
 import { Command } from '../commands/command/command';
 
 @Component({

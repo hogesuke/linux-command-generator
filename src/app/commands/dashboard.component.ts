@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Command } from './command/command';
-import { CommandService } from './shared/command.service';
+import { CommandService } from '../shared/command.service';
 
 @Component({
   selector: 'app-dashboard',

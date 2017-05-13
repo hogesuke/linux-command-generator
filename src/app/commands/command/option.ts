@@ -1,5 +1,6 @@
 import { Argument } from './argument';
 import { IOptionParams } from './command-generator';
+import { IOptionInputParams } from './command-input-holder-generator';
 
 export class Option {
   name: string;
@@ -20,13 +21,10 @@ export class Option {
     if (this.argument) { this.argument.clear(); }
   }
 
-  toObject(): IOptionParams {
+  toObject(): IOptionInputParams {
     return {
       name: this.name,
-      description: this.description,
-      argument: this.argument && this.argument.toObject(),
-      canCombine: this.canCombine,
-      sample: this.sample,
+      argument: this.argument && this.argument.toObject()
     };
   }
 

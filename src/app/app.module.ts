@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { DashboardComponent } from './commands/dashboard.component';
-import { CommandService } from './commands/shared/command.service';
+import { CommandService } from './shared/command.service';
 import { CommandComponent } from './commands/command/command.component';
 import { OptionsExpressionComponent } from './commands/command/options-expression.component';
 import { ArgumentsExpressionComponent } from './commands/command/arguments-expression.component';

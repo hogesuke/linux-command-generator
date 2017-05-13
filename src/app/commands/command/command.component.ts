@@ -4,8 +4,8 @@ import 'rxjs/add/operator/switchMap';
 import Clipboard from 'clipboard';
 
 import { Command } from './command';
-import { CommandService } from '../shared/command.service';
-import { CommandGenerator, ICommandParams } from './command-generator';
+import { CommandService } from '../../shared/command.service';
+import { ICommandInputParams } from './command-input-holder-generator';
 
 @Component({
   selector: 'app-command',
@@ -15,8 +15,8 @@ import { CommandGenerator, ICommandParams } from './command-generator';
 
 export class CommandComponent implements OnInit {
   command: Command;
-  histories: Command[];
-  isHistoryVisible = false;
+  histories: ICommandInputParams[];
+  visibleHisotry = false;
 
   constructor(
     private commandService: CommandService,
@@ -26,8 +26,7 @@ export class CommandComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.command = this.commandService.find(params['name']);
-
-      this.histories = this.getHistoryCommands(this.command.name);
+      this.histories = this.loadHistories();
     });
 
     const cb = new Clipboard('.copy-button', {
@@ -35,8 +34,7 @@ export class CommandComponent implements OnInit {
     });
 
     cb.on('success', () => {
-      this.histories.push(CommandGenerator.generate(this.command.toObject()));
-      localStorage.setItem(`${this.command.name}_histories`, JSON.stringify(this.histories.map(a => a.toObject())));
+      this.saveHistories();
     });
   }
 
@@ -45,12 +43,16 @@ export class CommandComponent implements OnInit {
   }
 
   toggleHistory(): void {
-    this.isHistoryVisible = !this.isHistoryVisible;
+    this.visibleHisotry = !this.visibleHisotry;
   }
 
-  private getHistoryCommands(commandName): Command[] {
-    const h: string = localStorage.getItem(`${commandName}_histories`);
-    const paramsArray: ICommandParams[] = h ? JSON.parse(h) : [];
-    return CommandGenerator.generateAll(paramsArray);
+  private loadHistories(): ICommandInputParams[] {
+    const h: string = localStorage.getItem(`${this.command.name}_histories`);
+    return h ? JSON.parse(h) : [];
+  }
+
+  private saveHistories(): void {
+    this.histories.push(this.command.toObject());
+    localStorage.setItem(`${this.command.name}_histories`, JSON.stringify(this.histories));
   }
 }

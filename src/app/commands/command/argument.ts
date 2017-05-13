@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { IArgumentParams } from './command-generator';
+import { IArgumentInputParams } from './command-input-holder-generator';
 
 export class Argument {
   name: string;
@@ -20,12 +21,9 @@ export class Argument {
     this.input = '';
   }
 
-  toObject(): IArgumentParams {
+  toObject(): IArgumentInputParams {
     return {
       name: this.name,
-      description: this.description,
-      required: this.required,
-      sample: this.sample,
       input: this.input
     };
   }
