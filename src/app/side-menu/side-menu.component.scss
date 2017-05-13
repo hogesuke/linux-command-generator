@@ -4,7 +4,7 @@
   width: 250px;
   background-color: #F4F4F5;
   box-sizing: border-box;
-  box-shadow: 3px 0 6px 0 #e0e0e0;
+  border-right: solid 1px #e1dee1;
 
   ul li {
     padding: 18px 15px;
@@ -28,19 +28,22 @@
 
     input {
       width: 100%;
-      padding: 10px 15px;
-      border: solid 1px #ddd;
-      border-radius: 9% / 50%;
+      padding: 10px 5px;
+      background-color: transparent;
+      border: none;
+      border-bottom: solid 2px #ddd;
       font-size: 15px;
       box-sizing: border-box;
+      transition: border-bottom-color 0.3s ease;
 
       &:focus {
         outline: 0;
+        border-bottom-color: #ffb14a;
       }
 
       &::placeholder {
         font-weight: 100;
-        color: #ccc;
+        color: #888;
       }
     }
   }
