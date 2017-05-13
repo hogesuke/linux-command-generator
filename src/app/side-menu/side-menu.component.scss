@@ -1,3 +1,5 @@
+@import '../shared/style/mixin/text-input';
+
 #sidemenu {
   position: fixed;
   height: 100%;
@@ -27,17 +29,12 @@
     margin: 15px;
 
     input {
+      @include text-input;
       width: 100%;
       padding: 10px 5px;
-      background-color: transparent;
-      border: none;
-      border-bottom: solid 2px #ddd;
       font-size: 15px;
-      box-sizing: border-box;
-      transition: border-bottom-color 0.3s ease;
 
       &:focus {
-        outline: 0;
         border-bottom-color: #ffb14a;
       }
 

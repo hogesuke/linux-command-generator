@@ -1,0 +1,11 @@
+@mixin text-input {
+  box-sizing: border-box;
+  border: none;
+  border-bottom: solid 2px #ddd;
+  background-color: transparent;
+  transition: border-bottom-color 0.3s ease;
+
+  &:focus {
+    outline: 0;
+  }
+}
