@@ -35,7 +35,7 @@ export class CommandComponent implements OnInit {
     });
 
     cb.on('success', () => {
-      this.histories.push(this.command.toObject());
+      this.addHistory(this.command.toObject());
       this.saveHistories();
     });
   }
@@ -65,6 +65,14 @@ export class CommandComponent implements OnInit {
 
       this.command.optionHolder.push(target);
     });
+  }
+
+  addHistory(history: ICommandInputParams): void {
+    this.histories.splice(0, 0, history);
+
+    if (this.histories.length > 10) {
+      this.histories = this.histories.slice(0, 10);
+    }
   }
 
   removeHistory(history: ICommandInputParams): void {
