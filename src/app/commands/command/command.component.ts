@@ -35,6 +35,7 @@ export class CommandComponent implements OnInit {
     });
 
     cb.on('success', () => {
+      this.histories.push(this.command.toObject());
       this.saveHistories();
     });
   }
@@ -68,6 +69,7 @@ export class CommandComponent implements OnInit {
 
   removeHistory(history: ICommandInputParams): void {
     _.pull(this.histories, history);
+    this.saveHistories();
   }
 
   private loadHistories(): ICommandInputParams[] {
@@ -76,7 +78,6 @@ export class CommandComponent implements OnInit {
   }
 
   private saveHistories(): void {
-    this.histories.push(this.command.toObject());
     localStorage.setItem(`${this.command.name}_histories`, JSON.stringify(this.histories));
   }
 }
