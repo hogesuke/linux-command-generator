@@ -16,7 +16,7 @@ import { ICommandInputParams } from './command-input-holder-generator';
 export class CommandComponent implements OnInit {
   command: Command;
   histories: ICommandInputParams[];
-  visibleHisotry = false;
+  visibleHistory = false;
 
   constructor(
     private commandService: CommandService,
@@ -43,7 +43,7 @@ export class CommandComponent implements OnInit {
   }
 
   toggleHistory(): void {
-    this.visibleHisotry = !this.visibleHisotry;
+    this.visibleHistory = !this.visibleHistory;
   }
 
   private loadHistories(): ICommandInputParams[] {
