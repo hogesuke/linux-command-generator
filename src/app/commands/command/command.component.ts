@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import Clipboard from 'clipboard';
+import _ from 'lodash';
 
 import { Command } from './command';
 import { CommandService } from '../../shared/command.service';
@@ -63,6 +64,10 @@ export class CommandComponent implements OnInit {
 
       this.command.optionHolder.push(target);
     });
+  }
+
+  removeHistory(history: ICommandInputParams): void {
+    _.pull(this.histories, history);
   }
 
   private loadHistories(): ICommandInputParams[] {
