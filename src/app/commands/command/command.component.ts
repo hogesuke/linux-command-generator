@@ -46,6 +46,25 @@ export class CommandComponent implements OnInit {
     this.visibleHistory = !this.visibleHistory;
   }
 
+  applyHistory(history: ICommandInputParams): void {
+    this.command.clear();
+
+    history.args.forEach(arg => {
+      const target = this.command.args.find(a => a.name === arg.name);
+      target.input = arg.input;
+    });
+
+    history.options.forEach(op => {
+      const target = this.command.options.find(a => a.name === op.name);
+
+      if (op.argument) {
+        target.argument.input = op.argument.input;
+      }
+
+      this.command.optionHolder.push(target);
+    });
+  }
+
   private loadHistories(): ICommandInputParams[] {
     const h: string = localStorage.getItem(`${this.command.name}_histories`);
     return h ? JSON.parse(h) : [];

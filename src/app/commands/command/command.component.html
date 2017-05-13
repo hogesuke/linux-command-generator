@@ -26,7 +26,7 @@
   <div id="block-history" [class.visible]="visibleHistory">
     <h3>History</h3>
     <table class="">
-      <tr *ngFor="let h of histories">
+      <tr *ngFor="let h of histories" (click)="applyHistory(h)">
         <td>{{ h.sentence }}</td>
       </tr>
     </table>
