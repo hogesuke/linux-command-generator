@@ -26,7 +26,6 @@ table {
 
 #grammar {
   position: relative;
-  overflow: hidden;
   display: flex;
   margin-bottom: 50px;
   padding: 35px 20px 35px 50px;
@@ -47,7 +46,7 @@ table {
     margin-right: 10px;
   }
 
-  @mixin button($num) {
+  @mixin button($num, $button-name) {
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -95,6 +94,10 @@ table {
       background-color: #e7e7e7;
     }
 
+    &:hover ~ .#{$button-name}-balloon {
+      opacity: 1;
+    }
+
     &:active, &.active {
       background-color: transparent;
       color: #fff;
@@ -108,15 +111,15 @@ table {
   }
 
   .copy-button {
-    @include button(1);
+    @include button(1, 'copy');
   }
 
   .clear-button {
-    @include button(2);
+    @include button(2, 'clear');
   }
 
   .history-button {
-    @include button(3);
+    @include button(3, 'history');
     z-index: 1;
 
     &.badge::after {
@@ -135,6 +138,49 @@ table {
     &.badge.active::after {
       background-color: #fff;
     }
+  }
+
+  .balloon{
+    opacity: 0;
+    padding: 10px 8px;
+    width: 40px;
+    background-color: #5f5f5f;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    transition: opacity 0.2s ease;
+
+    &::after{
+      position: absolute;
+      display: block;
+      bottom: -8px;
+      left: calc(50% - 7px);
+      height: 0;
+      width: 0;
+      content: "";
+      border-left: solid 6px transparent;
+      border-right: solid 6px transparent;
+      border-top: solid 8px #5f5f5f;
+    }
+  }
+
+  @mixin balloon-position($num) {
+    position: absolute;
+    top: -48px;
+    right: -42px + 30px * $num;
+  }
+
+  .copy-balloon {
+    @include balloon-position(1);
+  }
+
+  .clear-balloon {
+    @include balloon-position(2);
+  }
+
+  .history-balloon {
+    @include balloon-position(3);
   }
 }
 
