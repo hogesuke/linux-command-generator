@@ -17,7 +17,7 @@ import { ICommandInputParams } from './command-input-holder-generator';
 export class CommandComponent implements OnInit {
   command: Command;
   histories: ICommandInputParams[];
-  visibleHistory = false;
+  visibleHistory: boolean;
 
   constructor(
     private commandService: CommandService,
@@ -28,11 +28,10 @@ export class CommandComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.command = this.commandService.find(params['name']);
       this.histories = this.loadHistories();
+      this.visibleHistory = this.loadVisibleHistoryStatus();
     });
 
-    const cb = new Clipboard('.copy-button', {
-      text: () => this.command.sentence
-    });
+    const cb = new Clipboard('.copy-button', { text: () => this.command.sentence });
 
     cb.on('success', () => {
       this.addHistory(this.command.toObject());
@@ -46,6 +45,7 @@ export class CommandComponent implements OnInit {
 
   toggleHistory(): void {
     this.visibleHistory = !this.visibleHistory;
+    this.saveHistory();
   }
 
   applyHistory(history: ICommandInputParams): void {
@@ -87,5 +87,14 @@ export class CommandComponent implements OnInit {
 
   private saveHistories(): void {
     localStorage.setItem(`${this.command.name}_histories`, JSON.stringify(this.histories));
+  }
+
+  private loadVisibleHistoryStatus(): boolean {
+    const a: string = localStorage.getItem('visible_history');
+    return a ? JSON.parse(a) : false;
+  }
+
+  private saveHistory(): void {
+    localStorage.setItem('visible_history', JSON.stringify(this.visibleHistory));
   }
 }
