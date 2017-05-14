@@ -202,13 +202,13 @@ table {
   @include text-input;
   width: 100%;
   padding: 5px;
-  border-bottom-color: rgba(26, 26, 78, 0.1);
+  border-bottom-color: rgba(26, 26, 78, 0.2);
   font-size: 16px;
   font-weight: 100;
 
   &::placeholder {
     font-weight: 100;
-    color: #ccc;
+    color: #aaa;
   }
 
   &:focus {
