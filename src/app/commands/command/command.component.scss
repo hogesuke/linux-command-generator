@@ -138,17 +138,30 @@ table {
   }
 }
 
+@mixin row-mark($icon, $color, $opacity) {
+  &:before {
+    position: absolute;
+    left: 3px;
+    content: $icon;
+    font-family: FontAwesome;
+    color: $color;
+    opacity: $opacity;
+  }
+}
+
 #block-history {
   margin-bottom: 50px;
   display: none;
 
   .sentence {
-    padding-left: 20px;
+    position: relative;
+    padding-left: 23px;
     color: #4777d4;
 
     &:hover {
       text-decoration: underline;
       cursor: pointer;
+      @include row-mark("\f0ea", #000, 0.15);
     }
   }
 
@@ -208,7 +221,7 @@ table {
 
     .arg-name {
       width: 25%;
-      padding-left: 20px;
+      padding-left: 23px;
     }
 
     .arg-description {
@@ -223,17 +236,6 @@ table {
         @include arg-input($arg-color);
       }
     }
-  }
-}
-
-@mixin row-mark($icon, $color, $opacity) {
-  &:before {
-    position: absolute;
-    left: 3px;
-    content: $icon;
-    font-family: FontAwesome;
-    color: $color;
-    opacity: $opacity;
   }
 }
 
