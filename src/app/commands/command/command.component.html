@@ -1,10 +1,10 @@
 <div>
   <h2>{{ command.name }}</h2>
-  <div class="command-description">
+  <div class="command-description" [class.fixed]="isGrammarFixed()">
     <span>{{ command.description }}</span>
   </div>
 
-  <div id="grammar" class="monospaced">
+  <div id="grammar" class="monospaced" [class.fixed]="isGrammarFixed()">
     <div class="name">{{ command.name }}</div>
     <app-options-expression *ngIf="command.hasOption()"
                             [holder]="command.optionHolder">

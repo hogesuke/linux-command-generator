@@ -9,6 +9,7 @@ import { CommandGenerator, ICommandParams } from '../commands/command/command-ge
 @Injectable()
 export class CommandService {
   commands: Command[] = [];
+  mainScrollTop = 0; // todo 適切な場所に移動させる
 
   constructor(private http: Http) {
   }

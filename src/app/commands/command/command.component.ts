@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import Clipboard from 'clipboard';
@@ -14,15 +14,20 @@ import { ICommandInputParams } from './command-input-holder-generator';
   styleUrls: [ './command.component.scss' ]
 })
 
-export class CommandComponent implements OnInit {
+export class CommandComponent implements OnInit, AfterViewInit {
   command: Command;
   histories: ICommandInputParams[];
   visibleHistory: boolean;
+  private _el: HTMLElement;
+  private grammarOffsetTop: number;
 
   constructor(
     private commandService: CommandService,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private el: ElementRef
+  ) {
+    this._el = this.el.nativeElement;
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -37,6 +42,15 @@ export class CommandComponent implements OnInit {
       this.addHistory(this.command.toObject());
       this.saveHistories();
     });
+  }
+
+  ngAfterViewInit(): void {
+    const grammar: HTMLElement = <HTMLElement>this._el.querySelector('#grammar');
+    this.grammarOffsetTop = grammar.offsetTop;
+  }
+
+  isGrammarFixed(): boolean {
+    return this.grammarOffsetTop < this.commandService.mainScrollTop;
   }
 
   hasHistory(): boolean {

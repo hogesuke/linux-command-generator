@@ -22,6 +22,10 @@ table {
 .command-description {
   margin-bottom: 20px;
   font-size: 14px;
+
+  &.fixed { // todo 適切なクラス名に変更すること
+    margin-bottom: 20px + 136px;
+  }
 }
 
 #grammar {
@@ -31,6 +35,10 @@ table {
   padding: 35px 20px 35px 50px;
   background-color: #f4f4f5;
   font-size: 16px;
+
+  &.fixed {
+    position: fixed;
+  }
 
   &:before {
     position: absolute;
