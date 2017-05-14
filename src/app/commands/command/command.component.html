@@ -25,12 +25,13 @@
 
   <div id="block-history" [class.visible]="visibleHistory">
     <h3>History</h3>
-    <table class="history-table">
+    <table class="history-table" *ngIf="hasHistory()">
       <tr *ngFor="let h of histories">
         <td class="sentence" (click)="applyHistory(h)">{{ h.sentence }}</td>
         <td class="buttons"><button class="button" (click)="removeHistory(h)">REMOVE</button></td>
       </tr>
     </table>
+    <div class="none" *ngIf="!hasHistory()">コピー履歴がありません</div>
   </div>
 
   <div id="block-arg">

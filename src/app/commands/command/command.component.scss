@@ -190,6 +190,12 @@ table {
   &.visible {
     display: block;
   }
+
+  .none {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 @mixin arg-input($color) {
