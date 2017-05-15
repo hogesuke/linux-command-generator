@@ -23,175 +23,191 @@ table {
   margin-bottom: 20px;
   font-size: 14px;
 
-  &.fixed { // todo 適切なクラス名に変更すること
+  &.fixed {
     margin-bottom: 20px + 136px;
   }
 }
 
-#grammar {
+.grammar-container {
   position: relative;
-  display: flex;
-  margin-bottom: 50px;
-  padding: 35px 20px 35px 50px;
-  background-color: #f4f4f5;
-  font-size: 16px;
+  box-sizing: border-box;
 
   &.fixed {
+    overflow-y: scroll;
     position: fixed;
-    top: 10px;
-    max-width: 1000px;
-    z-index: 20000;
-  }
-
-  &:before {
-    position: absolute;
     top: 0;
     left: 0;
-    padding: 6px 8px;
-    content: '文法';
-    font-size: 12px;
-    color: #888888;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    z-index: 10000;
   }
 
-  .name {
-    margin-right: 10px;
-  }
-
-  @mixin button($num, $button-name) {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: ($num - 1) * 30px;
-    height: 30px;
-    width: 30px;
-    border: none;
+  &.fixed > .grammar {
+    max-width: 1000px - 60px; // NOTE: 60pxは.containerのpadding分
+    min-width: 600px;
     box-sizing: border-box;
-    padding: 0 6px;
-    background-color: transparent;
-    font-size: 14px;
-    color: #888888;
-    text-align: center;
-    transition: color 0.3s ease-out, background-color 0.3s ease;
+    margin: 0 auto;
+  }
 
-    i {
-      position: relative;
-      display: block;
-      line-height: 30px;
-      background-color: transparent;
-      z-index: 2;
-    }
+  > .grammar {
+    position: relative;
+    display: flex;
+    margin-bottom: 50px;
+    padding: 35px 20px 35px 50px;
+    background-color: #f4f4f5;
+    font-size: 16px;
 
-    &::before{
+    &:before {
       position: absolute;
-      content:'';
-      border-radius: 50%;
-      display: block;
-      width: 30px * 2;
-      height: 30px * 2;
-      line-height: 30px*2;
-      top: (-30px / 2);
-      left: (-30px / 2);
-      text-align: center;
-      transition: box-shadow 0.3s ease-out;
-      z-index: 1;
+      top: 0;
+      left: 0;
+      padding: 6px 8px;
+      content: '文法';
+      font-size: 12px;
+      color: #888888;
     }
 
-    &:focus {
-      outline: 0;
+    .name {
+      margin-right: 10px;
     }
 
-    &:hover {
-      cursor: pointer;
-      background-color: #e7e7e7;
-    }
-
-    &:hover ~ .#{$button-name}-balloon {
-      opacity: 1;
-    }
-
-    &:active, &.active {
+    @mixin button($num, $button-name) {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      right: ($num - 1) * 30px;
+      height: 30px;
+      width: 30px;
+      border: none;
+      box-sizing: border-box;
+      padding: 0 6px;
       background-color: transparent;
-      color: #fff;
-      transition: 0s;
+      font-size: 14px;
+      color: #888888;
+      text-align: center;
+      transition: color 0.3s ease-out, background-color 0.3s ease;
+
+      i {
+        position: relative;
+        display: block;
+        line-height: 30px;
+        background-color: transparent;
+        z-index: 2;
+      }
 
       &::before{
-        box-shadow:inset 0 0 0 30px #61c3bf;
+        position: absolute;
+        content:'';
+        border-radius: 50%;
+        display: block;
+        width: 30px * 2;
+        height: 30px * 2;
+        line-height: 30px*2;
+        top: (-30px / 2);
+        left: (-30px / 2);
+        text-align: center;
+        transition: box-shadow 0.3s ease-out;
+        z-index: 1;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #e7e7e7;
+      }
+
+      &:hover ~ .#{$button-name}-balloon {
+        opacity: 1;
+      }
+
+      &:active, &.active {
+        background-color: transparent;
+        color: #fff;
         transition: 0s;
+
+        &::before{
+          box-shadow:inset 0 0 0 30px #61c3bf;
+          transition: 0s;
+        }
       }
     }
-  }
 
-  .copy-button {
-    @include button(1, 'copy');
-  }
+    .copy-button {
+      @include button(1, 'copy');
+    }
 
-  .clear-button {
-    @include button(2, 'clear');
-  }
+    .clear-button {
+      @include button(2, 'clear');
+    }
 
-  .history-button {
-    @include button(3, 'history');
-    z-index: 1;
+    .history-button {
+      @include button(3, 'history');
+      z-index: 1;
 
-    &.badge::after {
+      &.badge::after {
+        z-index: 2;
+        position: absolute;
+        top: 5px;
+        right: 3px;
+        height: 7px;
+        width: 7px;
+        content: '';
+        background-color: #ff8d8c;
+        color: #ffffff;
+        border-radius: 50%;
+      }
+
+      &.badge.active::after {
+        background-color: #fff;
+      }
+    }
+
+    .balloon{
+      opacity: 0;
+      padding: 10px 8px;
+      width: 40px;
+      background-color: #5f5f5f;
+      font-size: 12px;
+      text-align: center;
+      color: #fff;
       z-index: 2;
+      transition: opacity 0.2s ease;
+
+      &::after{
+        position: absolute;
+        display: block;
+        bottom: -8px;
+        left: calc(50% - 7px);
+        height: 0;
+        width: 0;
+        content: "";
+        border-left: solid 6px transparent;
+        border-right: solid 6px transparent;
+        border-top: solid 8px #5f5f5f;
+      }
+    }
+
+    @mixin balloon-position($num) {
       position: absolute;
-      top: 5px;
-      right: 3px;
-      height: 7px;
-      width: 7px;
-      content: '';
-      background-color: #ff8d8c;
-      color: #ffffff;
-      border-radius: 50%;
+      top: -48px;
+      right: -42px + 30px * $num;
     }
 
-    &.badge.active::after {
-      background-color: #fff;
+    .copy-balloon {
+      @include balloon-position(1);
     }
-  }
 
-  .balloon{
-    opacity: 0;
-    padding: 10px 8px;
-    width: 40px;
-    background-color: #5f5f5f;
-    font-size: 12px;
-    text-align: center;
-    color: #fff;
-    z-index: 2;
-    transition: opacity 0.2s ease;
-
-    &::after{
-      position: absolute;
-      display: block;
-      bottom: -8px;
-      left: calc(50% - 7px);
-      height: 0;
-      width: 0;
-      content: "";
-      border-left: solid 6px transparent;
-      border-right: solid 6px transparent;
-      border-top: solid 8px #5f5f5f;
+    .clear-balloon {
+      @include balloon-position(2);
     }
-  }
 
-  @mixin balloon-position($num) {
-    position: absolute;
-    top: -48px;
-    right: -42px + 30px * $num;
-  }
-
-  .copy-balloon {
-    @include balloon-position(1);
-  }
-
-  .clear-balloon {
-    @include balloon-position(2);
-  }
-
-  .history-balloon {
-    @include balloon-position(3);
+    .history-balloon {
+      @include balloon-position(3);
+    }
   }
 }
 

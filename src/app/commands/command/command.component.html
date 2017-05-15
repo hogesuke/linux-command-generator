@@ -4,33 +4,35 @@
     <span>{{ command.description }}</span>
   </div>
 
-  <div id="grammar" class="monospaced" [class.fixed]="isGrammarFixed()">
-    <div class="name">{{ command.name }}</div>
-    <app-options-expression *ngIf="command.hasOption()"
-                            [holder]="command.optionHolder">
-    </app-options-expression>
-    <app-arguments-expression *ngIf="command.hasArg()"
-                              [args]="command.args">
-    </app-arguments-expression>
+  <div class="grammar-container" [class.fixed]="isGrammarFixed()">
+    <div class="grammar monospaced">
+      <div class="name">{{ command.name }}</div>
+      <app-options-expression *ngIf="command.hasOption()"
+                              [holder]="command.optionHolder">
+      </app-options-expression>
+      <app-arguments-expression *ngIf="command.hasArg()"
+                                [args]="command.args">
+      </app-arguments-expression>
 
-    <button class="copy-button">
-      <i class="fa fa-files-o" aria-hidden="true"></i>
-    </button>
-    <button class="clear-button" (click)="command.clear()">
-      <i class="fa fa-eraser" aria-hidden="true"></i>
-    </button>
-    <button class="history-button" (click)="toggleHistory()" [class.badge]="hasHistory()" [ngClass]="{ active: visibleHistory }">
-      <i class="fa fa-history" aria-hidden="true"></i>
-    </button>
+      <button class="copy-button">
+        <i class="fa fa-files-o" aria-hidden="true"></i>
+      </button>
+      <button class="clear-button" (click)="command.clear()">
+        <i class="fa fa-eraser" aria-hidden="true"></i>
+      </button>
+      <button class="history-button" (click)="toggleHistory()" [class.badge]="hasHistory()" [ngClass]="{ active: visibleHistory }">
+        <i class="fa fa-history" aria-hidden="true"></i>
+      </button>
 
-    <div class="balloon copy-balloon">
-      <p>コピー</p>
-    </div>
-    <div class="balloon clear-balloon">
-      <p>クリア</p>
-    </div>
-    <div class="balloon history-balloon">
-      <p>履歴</p>
+      <div class="balloon copy-balloon">
+        <p>コピー</p>
+      </div>
+      <div class="balloon clear-balloon">
+        <p>クリア</p>
+      </div>
+      <div class="balloon history-balloon">
+        <p>履歴</p>
+      </div>
     </div>
   </div>
 

@@ -21,11 +21,12 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const main = this._el.querySelector('#main');
+    const fps = 60;
 
     this.commandService.mainScrollTop = 0;
 
     main.addEventListener('scroll', _.debounce(() => {
         this.commandService.mainScrollTop = main.scrollTop;
-    }, 100));
+    }, 1000 / fps));
   }
 }

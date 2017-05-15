@@ -45,12 +45,13 @@ export class CommandComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const grammar: HTMLElement = <HTMLElement>this._el.querySelector('#grammar');
+    const grammar: HTMLElement = <HTMLElement>this._el.querySelector('.grammar-container');
     this.grammarOffsetTop = grammar.offsetTop;
   }
 
   isGrammarFixed(): boolean {
-    return this.grammarOffsetTop < this.commandService.mainScrollTop;
+    const marginTop = 10;
+    return this.grammarOffsetTop < this.commandService.mainScrollTop + marginTop;
   }
 
   hasHistory(): boolean {
@@ -84,8 +85,10 @@ export class CommandComponent implements OnInit, AfterViewInit {
   addHistory(history: ICommandInputParams): void {
     this.histories.splice(0, 0, history);
 
-    if (this.histories.length > 10) {
-      this.histories = this.histories.slice(0, 10);
+    const max = 10;
+
+    if (this.histories.length > max) {
+      this.histories = this.histories.slice(0, max);
     }
   }
 
