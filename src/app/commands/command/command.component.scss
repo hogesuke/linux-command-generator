@@ -33,6 +33,7 @@ table {
   box-sizing: border-box;
 
   &.fixed {
+    overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
     top: 0;
@@ -41,13 +42,22 @@ table {
     padding: 10px 0;
     background-color: #fff;
     z-index: 10000;
+
+    @media screen and (max-width: $center-threshold-width) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
   &.fixed > .grammar {
-    max-width: 1000px - 60px; // NOTE: 60pxは.containerのpadding分
-    min-width: 600px;
+    max-width: $container-max-width - 30px * 2; // NOTE: 30pxは.containerのpadding分
+    min-width: $container-min-width - 30px * 2;
     box-sizing: border-box;
     margin: 0 auto;
+
+    @media screen and (max-width: $center-threshold-width) {
+      margin-left: $container-margin-left;
+    }
   }
 
   > .grammar {

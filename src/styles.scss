@@ -1,3 +1,5 @@
+@import './app/shared/style/variables';
+
 html, body {
   height: 100%;
 }
@@ -17,16 +19,16 @@ body {
 
 #content {
   height: 100%;
-  max-width: 1000px;
-  min-width: 600px;
+  max-width: $container-max-width;
+  min-width: $container-min-width;
   margin: 0 auto;
   padding: 10px 30px;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: $center-threshold-width) {
   #content {
-    margin: 0 0 0 300px;
+    margin-left: $container-margin-left;
   }
 }
 
