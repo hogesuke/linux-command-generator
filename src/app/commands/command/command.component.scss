@@ -38,6 +38,9 @@ table {
 
   &.fixed {
     position: fixed;
+    top: 10px;
+    max-width: 1000px;
+    z-index: 20000;
   }
 
   &:before {
