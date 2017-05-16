@@ -40,7 +40,7 @@ table {
     left: 0;
     width: 100%;
     padding: 10px 0;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     z-index: 10000;
 
     @media screen and (max-width: $center-threshold-width) {
