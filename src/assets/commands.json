@@ -1,35 +1,166 @@
 [
   {
     "name": "rsync",
-    "description": "説明だよ",
+    "description": "ファイルやディレクトリの同期を行うコマンド",
     "args": [
       {
-        "name": "hoge1",
-        "description": "argument1の説明",
+        "name": "source",
+        "description": "コピー元",
         "required": true,
-        "sample": "hoge1 sample"
+        "sample": "/path/to/source"
       },
       {
-        "name": "hoge2",
-        "description": "argument2の説明",
+        "name": "destination",
+        "description": "コピー先",
         "required": true,
-        "sample": "hoge2 sample"
+        "sample": "/path/to/destination"
       }
     ],
     "options": [
       {
-        "name": "option1",
-        "description": "option1の説明",
-        "argument": null,
-        "canCombine": false,
-        "sample": "option1 sample"
-      },
-      {
-        "name": "option2",
-        "description": "option2の説明",
+        "name": "-a",
+        "description": "-rlptgoD を指定した場合と同じ",
         "argument": null,
         "canCombine": true,
-        "sample": "option2 sample"
+        "sample": "-a"
+      },
+      {
+        "name": "-r",
+        "description": "ディレクトリを再帰的にコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-r"
+      },
+      {
+        "name": "-l",
+        "description": "シンボリックリンクをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-l"
+      },
+      {
+        "name": "-p",
+        "description": "パーミッションをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-p"
+      },
+      {
+        "name": "-t",
+        "description": "タイムスタンプをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-t"
+      },
+      {
+        "name": "-g",
+        "description": "グループをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-g"
+      },
+      {
+        "name": "-o",
+        "description": "ファイルの所有者をそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-o"
+      },
+      {
+        "name": "-D",
+        "description": "--devices --specials を指定した場合と同じ",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-D"
+      },
+      {
+        "name": "--devices",
+        "description": "ブロックデバイスをコピーする",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--devices"
+      },
+      {
+        "name": "--specials",
+        "description": "名前付きパイプやFIFOなどの特殊ファイルをコピーする",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--specials"
+      },
+      {
+        "name": "-H",
+        "description": "ハードリンクをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-H"
+      },
+      {
+        "name": "-h",
+        "description": "ファイルサイズの表記にKやMを使用する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-h"
+      },
+      {
+        "name": "-v",
+        "description": "転送するファイル名やバイト数などの情報を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      },
+      {
+        "name": "-z",
+        "description": "転送時に圧縮する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-z"
+      },
+      {
+        "name": "-c",
+        "description": "タイムスタンプとファイルサイズではなくチェックサムを用いて差分チェックを行う",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-c"
+      },
+      {
+        "name": "-u",
+        "description": "転送先のファイルの方がタイムスタンプが新しい場合は転送を行わない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-n",
+        "description": "DryRunを行い転送内容のみを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-n"
+      },
+      {
+        "name": "-n",
+        "description": "DryRunを行い転送内容のみを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-n"
+      },
+      {
+        "name": "--delete",
+        "description": "コピー元に存在しないファイルは削除する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "--delete"
+      },
+      {
+        "name": "--exclude=",
+        "description": "指定したパターンにマッチするファイルを転送対象外とする",
+        "argument": {
+          "name": "pattern",
+          "description": "除外するファイルのパターン",
+          "required": true,
+          "sample": "\"*.log\""
+        },
+        "canCombine": true,
+        "sample": "--delete"
       }
     ]
   },
