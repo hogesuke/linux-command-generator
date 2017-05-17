@@ -1,6 +1,7 @@
 import { Argument } from './argument';
 import { IOptionParams } from './command-generator';
 import { IOptionInputParams } from './command-input-holder-generator';
+import _ from 'lodash';
 
 export class Option {
   name: string;
@@ -37,6 +38,7 @@ export class Option {
 
     const input = this.argument.input ? this.argument.input : `<${this.argument.name}>`;
 
-    return `${this.name} ${input}`;
+    // --exclude="*.log" のようなオプションの対応
+    return _.endsWith(this.name, '=') ? this.name + input : `${this.name} ${input}`;
   }
 }

@@ -73,10 +73,18 @@ export class OptionHolder {
   get optionsExpression(): string {
     if (!this.hasOption()) { return ''; }
 
-    const combinedOp = '-' + this.combinedOptions.map(op => op.withoutHyphen).join('');
-    const isolatedOp = this.isolatedOptions.map(op => op.name).join(' ');
-    const withArgOp  = this.withArgOptions.map(op => op.nameWithArgument).join(' ');
+    const expressions: string[] = [];
 
-    return `${combinedOp} ${isolatedOp} ${withArgOp}`;
+    if (this.hasCombinedOption()) {
+      expressions.push(this.combinedOptions.map(op => op.withoutHyphen).join(''));
+    }
+    if (this.hasIsolatedOptions()) {
+      expressions.push(this.isolatedOptions.map(op => op.name).join(' '));
+    }
+    if (this.hasWithArgOptions()) {
+      expressions.push(this.withArgOptions.map(op => op.nameWithArgument).join(' '));
+    }
+
+    return expressions.join(' ');
   }
 }
