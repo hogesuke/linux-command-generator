@@ -40,7 +40,7 @@
     <h3>History</h3>
     <table class="history-table" *ngIf="hasHistory()">
       <tr *ngFor="let h of histories">
-        <td class="sentence" (click)="applyHistory(h)">{{ h.sentence }}</td>
+        <td class="sentence monospaced" (click)="applyHistory(h)">{{ h.sentence }}</td>
         <td class="buttons"><button class="button" (click)="removeHistory(h)">REMOVE</button></td>
       </tr>
     </table>
