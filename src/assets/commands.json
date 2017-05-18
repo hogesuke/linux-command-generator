@@ -166,54 +166,73 @@
   },
   {
     "name": "scp",
-    "description": "説明だよ",
+    "description": "sshプロトコルを利用したファイルコピーを行うコマンド",
     "args": [
       {
-        "name": "hoge1",
-        "description": "argument1の説明",
+        "name": "source",
+        "description": "コピー元",
         "required": true,
-        "sample": "hoge1 sample"
+        "sample": "/path/to/source"
       },
       {
-        "name": "hoge2",
-        "description": "argument2の説明",
+        "name": "destination",
+        "description": "コピー先",
         "required": true,
-        "sample": "hoge2 sample"
+        "sample": "/path/to/destination"
       }
     ],
     "options": [
       {
-        "name": "option1",
-        "description": "option1の説明",
+        "name": "-C",
+        "description": "転送時に圧縮を行う",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-C"
+      },
+      {
+        "name": "-i",
+        "description": "使用する秘密鍵を指定する",
         "argument": {
-          "name": "hoge1",
-          "description": "argument1の説明",
+          "name": "private_key",
+          "description": "秘密鍵のパス",
           "required": true,
-          "sample": "hoge1 sample"
+          "sample": "~/.ssh/id_rsa_hoge"
         },
         "canCombine": false,
-        "sample": "option1 sample"
+        "sample": "-i <private_key>"
       },
       {
-        "name": "option2",
-        "description": "option2の説明",
-        "argument": null,
+        "name": "-P",
+        "description": "SSHの接続先ポート番号を指定する",
+        "argument": {
+          "name": "port",
+          "description": "ポート番号",
+          "required": true,
+          "sample": "12345"
+        },
         "canCombine": false,
-        "sample": "option2 sample"
+        "sample": "-P <port>"
       },
       {
-        "name": "-a",
-        "description": "-aの説明",
+        "name": "-p",
+        "description": "コピー元の更新日時, アクセス日時, モードをそのままコピーする",
         "argument": null,
         "canCombine": true,
-        "sample": "-a sample"
+        "sample": "-p"
       },
       {
-        "name": "-b",
-        "description": "-bの説明",
+        "name": "-r",
+        "description": "ディレクトリを再帰的にコピーする",
         "argument": null,
         "canCombine": true,
-        "sample": "-b sample"
+        "sample": "-r"
+      },
+      {
+        "name": "-v",
+        "description": "詳細な情報を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
       }
     ]
   }
