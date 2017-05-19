@@ -235,5 +235,117 @@
         "sample": "-v"
       }
     ]
+  },
+  {
+    "name": "ls",
+    "description": "ファイルやディレクトリの一覧を表示するコマンド",
+    "args": [],
+    "options": [
+      {
+        "name": "-a",
+        "description": "ファイル名がドットで始まる隠しファイルも表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-a"
+      },
+      {
+        "name": "-l",
+        "description": "ファイル名だけでなく詳細な情報も表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-l"
+      },
+      {
+        "name": "-1",
+        "description": "1行ごとに表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-l"
+      },
+      {
+        "name": "-r",
+        "description": "リストを逆順に表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-r"
+      },
+      {
+        "name": "-t",
+        "description": "更新時刻順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-t"
+      },
+      {
+        "name": "-u",
+        "description": "アクセス時刻順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-S",
+        "description": "ファイルサイズ順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-S"
+      },
+      {
+        "name": "-X",
+        "description": "拡張子順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-X"
+      },
+      {
+        "name": "-R",
+        "description": "ディレクトリを再帰的に表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-R"
+      },
+      {
+        "name": "-m",
+        "description": "カンマ区切りでファイル名を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-m"
+      },
+      {
+        "name": "-h",
+        "description": "ファイルサイズの単位にKやMを使用して表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-h"
+      },
+      {
+        "name": "-k",
+        "description": "ファイルサイズのキロバイト単位で表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-k"
+      },
+      {
+        "name": "-F",
+        "description": "ファイルタイプを示す文字を付加して表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-F"
+      },
+      {
+        "name": "-p",
+        "description": "ディレクトリ名の後ろにスラッシュを付ける",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-p"
+      },
+      {
+        "name": "--full-time",
+        "description": "タイムスタンプを詳細に表示する",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--full-time"
+      }
+    ]
   }
 ]
