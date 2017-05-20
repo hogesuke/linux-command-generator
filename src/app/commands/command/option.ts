@@ -29,6 +29,10 @@ export class Option {
     };
   }
 
+  endsWithEqual(): boolean {
+    return _.endsWith(this.name, '=');
+  }
+
   get withoutHyphen(): string {
     return this.name.replace(/^-+/, '');
   }
@@ -39,6 +43,6 @@ export class Option {
     const input = this.argument.input ? this.argument.input : `<${this.argument.name}>`;
 
     // --exclude="*.log" のようなオプションの対応
-    return _.endsWith(this.name, '=') ? this.name + input : `${this.name} ${input}`;
+    return this.endsWithEqual() ? this.name + input : `${this.name} ${input}`;
   }
 }
