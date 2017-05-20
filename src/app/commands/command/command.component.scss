@@ -184,14 +184,14 @@ table {
       font-size: 12px;
       text-align: center;
       color: #fff;
-      z-index: 2;
+      z-index: 30000;
       transition: opacity 0.2s ease;
 
       &::after{
         position: absolute;
         display: block;
         bottom: -8px;
-        left: calc(50% - 7px);
+        left: calc(50% - 6px);
         height: 0;
         width: 0;
         content: "";
@@ -199,12 +199,23 @@ table {
         border-right: solid 6px transparent;
         border-top: solid 8px #5f5f5f;
       }
+
+      &.bottom::after {
+        top: -8px;
+        bottom: auto;
+        transform: rotate(180deg);
+      }
     }
 
     @mixin balloon-position($num) {
       position: absolute;
       top: -48px;
       right: -42px + 30px * $num;
+
+      &.bottom {
+        top: auto;
+        bottom: 10px;
+      }
     }
 
     .copy-balloon {

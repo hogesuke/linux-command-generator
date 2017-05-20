@@ -54,6 +54,11 @@ export class CommandComponent implements OnInit, AfterViewInit {
     return this.grammarOffsetTop < this.commandService.mainScrollTop + marginTop;
   }
 
+  isBalloonBottom(): boolean {
+    const balloonHeight = 40;
+    return this.grammarOffsetTop < this.commandService.mainScrollTop + balloonHeight;
+  }
+
   hasArgument(): boolean {
     return this.command.args.length > 0;
   }
