@@ -224,7 +224,7 @@ table {
 @mixin row-mark($icon, $color, $opacity) {
   &:before {
     position: absolute;
-    left: 3px;
+    left: 4px;
     content: $icon;
     font-family: FontAwesome;
     color: $color;
