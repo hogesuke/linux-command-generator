@@ -47,7 +47,7 @@
     <div class="none" *ngIf="!hasHistory()">コピー履歴がありません</div>
   </div>
 
-  <div id="block-arg">
+  <div id="block-arg" *ngIf="hasArgument()">
     <h3>Arguments</h3>
     <table class="arg-table">
       <tr *ngFor="let arg of command.args">

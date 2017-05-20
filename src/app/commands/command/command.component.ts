@@ -54,6 +54,10 @@ export class CommandComponent implements OnInit, AfterViewInit {
     return this.grammarOffsetTop < this.commandService.mainScrollTop + marginTop;
   }
 
+  hasArgument(): boolean {
+    return this.command.args.length > 0;
+  }
+
   hasHistory(): boolean {
     return this.histories.length > 0;
   }
