@@ -76,7 +76,7 @@ export class OptionHolder {
     const expressions: string[] = [];
 
     if (this.hasCombinedOption()) {
-      expressions.push(this.combinedOptions.map(op => op.withoutHyphen).join(''));
+      expressions.push('-' + this.combinedOptions.map(op => op.withoutHyphen).join(''));
     }
     if (this.hasIsolatedOptions()) {
       expressions.push(this.isolatedOptions.map(op => op.name).join(' '));
