@@ -12,6 +12,7 @@ import { CommandService } from './shared/command.service';
 import { CommandComponent } from './commands/command/command.component';
 import { OptionsExpressionComponent } from './commands/command/options-expression.component';
 import { ArgumentsExpressionComponent } from './commands/command/arguments-expression.component';
+import { GitHubCornerComponent } from './github-corner/github-corner.component';
 
 export function commandServiceFactory(commandService: CommandService) {
   return () => commandService.load();
@@ -24,7 +25,8 @@ export function commandServiceFactory(commandService: CommandService) {
     SideMenuComponent,
     CommandComponent,
     OptionsExpressionComponent,
-    ArgumentsExpressionComponent
+    ArgumentsExpressionComponent,
+    GitHubCornerComponent
   ],
   imports: [
     BrowserModule,
