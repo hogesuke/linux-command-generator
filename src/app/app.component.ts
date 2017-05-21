@@ -6,7 +6,7 @@ import { CommandService } from './shared/command.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: [ './app.component.scss' ]
 })
 
 export class AppComponent implements AfterViewInit {
@@ -21,11 +21,11 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const main = this._el.querySelector('#main');
-    const fps = 60;
+    const fps = 30;
 
     this.commandService.mainScrollTop = 0;
 
-    main.addEventListener('scroll', _.debounce(() => {
+    main.addEventListener('scroll', _.throttle(() => {
         this.commandService.mainScrollTop = main.scrollTop;
     }, 1000 / fps));
   }

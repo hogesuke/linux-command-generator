@@ -13,7 +13,7 @@
   </div>
   <div class="with-arg-options block">
     <div *ngFor="let op of holder.withArgOptions" class="option" [@enter]="'in'">
-      <div class="name">{{ op.name }}</div>
+      <div class="name" [class.equal]="op.endsWithEqual()">{{ op.name }}</div>
       <div *ngIf="op.argument.input" class="arg">{{ op.argument.input }}</div>
       <div *ngIf="!op.argument.input" class="arg"><{{ op.argument.name }}></div>
     </div>

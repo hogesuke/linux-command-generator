@@ -1,88 +1,357 @@
 [
   {
     "name": "rsync",
-    "description": "説明だよ",
+    "description": "ファイルやディレクトリの同期を行うコマンド",
     "args": [
       {
-        "name": "hoge1",
-        "description": "argument1の説明",
+        "name": "source",
+        "description": "コピー元",
         "required": true,
-        "sample": "hoge1 sample"
+        "sample": "/path/to/source"
       },
       {
-        "name": "hoge2",
-        "description": "argument2の説明",
+        "name": "destination",
+        "description": "コピー先",
         "required": true,
-        "sample": "hoge2 sample"
+        "sample": "/path/to/destination"
       }
     ],
     "options": [
       {
-        "name": "option1",
-        "description": "option1の説明",
-        "argument": null,
-        "canCombine": false,
-        "sample": "option1 sample"
-      },
-      {
-        "name": "option2",
-        "description": "option2の説明",
+        "name": "-a",
+        "description": "-rlptgoD を指定した場合と同じ",
         "argument": null,
         "canCombine": true,
-        "sample": "option2 sample"
+        "sample": "-a"
+      },
+      {
+        "name": "-r",
+        "description": "ディレクトリを再帰的にコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-r"
+      },
+      {
+        "name": "-l",
+        "description": "シンボリックリンクをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-l"
+      },
+      {
+        "name": "-p",
+        "description": "パーミッションをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-p"
+      },
+      {
+        "name": "-t",
+        "description": "タイムスタンプをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-t"
+      },
+      {
+        "name": "-g",
+        "description": "グループをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-g"
+      },
+      {
+        "name": "-o",
+        "description": "ファイルの所有者をそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-o"
+      },
+      {
+        "name": "-D",
+        "description": "--devices --specials を指定した場合と同じ",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-D"
+      },
+      {
+        "name": "--devices",
+        "description": "ブロックデバイスをコピーする",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--devices"
+      },
+      {
+        "name": "--specials",
+        "description": "名前付きパイプやFIFOなどの特殊ファイルをコピーする",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--specials"
+      },
+      {
+        "name": "-H",
+        "description": "ハードリンクをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-H"
+      },
+      {
+        "name": "-h",
+        "description": "ファイルサイズの表記にKやMを使用する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-h"
+      },
+      {
+        "name": "-v",
+        "description": "転送するファイル名やバイト数などの情報を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      },
+      {
+        "name": "-z",
+        "description": "転送時に圧縮する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-z"
+      },
+      {
+        "name": "-c",
+        "description": "タイムスタンプとファイルサイズではなくチェックサムを用いて差分チェックを行う",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-c"
+      },
+      {
+        "name": "-u",
+        "description": "転送先のファイルの方がタイムスタンプが新しい場合は転送を行わない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-n",
+        "description": "DryRunを行い転送内容のみを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-n"
+      },
+      {
+        "name": "-n",
+        "description": "DryRunを行い転送内容のみを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-n"
+      },
+      {
+        "name": "--delete",
+        "description": "コピー元に存在しないファイルは削除する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "--delete"
+      },
+      {
+        "name": "--exclude=",
+        "description": "指定したパターンにマッチするファイルを転送対象外とする",
+        "argument": {
+          "name": "pattern",
+          "description": "除外するファイルのパターン",
+          "required": true,
+          "sample": "\"*.log\""
+        },
+        "canCombine": true,
+        "sample": "--delete"
+      },
+      {
+        "name": "--progress",
+        "description": "転送状況をリアルタイムで表示する",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--progress"
       }
     ]
   },
   {
     "name": "scp",
-    "description": "説明だよ",
+    "description": "sshプロトコルを利用したファイルコピーを行うコマンド",
     "args": [
       {
-        "name": "hoge1",
-        "description": "argument1の説明",
+        "name": "source",
+        "description": "コピー元",
         "required": true,
-        "sample": "hoge1 sample"
+        "sample": "/path/to/source"
       },
       {
-        "name": "hoge2",
-        "description": "argument2の説明",
+        "name": "destination",
+        "description": "コピー先",
         "required": true,
-        "sample": "hoge2 sample"
+        "sample": "/path/to/destination"
       }
     ],
     "options": [
       {
-        "name": "option1",
-        "description": "option1の説明",
+        "name": "-C",
+        "description": "転送時に圧縮を行う",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-C"
+      },
+      {
+        "name": "-i",
+        "description": "使用する秘密鍵を指定する",
         "argument": {
-          "name": "hoge1",
-          "description": "argument1の説明",
+          "name": "private_key",
+          "description": "秘密鍵のパス",
           "required": true,
-          "sample": "hoge1 sample"
+          "sample": "~/.ssh/id_rsa_hoge"
         },
         "canCombine": false,
-        "sample": "option1 sample"
+        "sample": "-i <private_key>"
       },
       {
-        "name": "option2",
-        "description": "option2の説明",
-        "argument": null,
+        "name": "-P",
+        "description": "SSHの接続先ポート番号を指定する",
+        "argument": {
+          "name": "port",
+          "description": "ポート番号",
+          "required": true,
+          "sample": "12345"
+        },
         "canCombine": false,
-        "sample": "option2 sample"
+        "sample": "-P <port>"
       },
+      {
+        "name": "-p",
+        "description": "コピー元の更新日時, アクセス日時, モードをそのままコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-p"
+      },
+      {
+        "name": "-r",
+        "description": "ディレクトリを再帰的にコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-r"
+      },
+      {
+        "name": "-v",
+        "description": "詳細な情報を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      }
+    ]
+  },
+  {
+    "name": "ls",
+    "description": "ファイルやディレクトリの一覧を表示するコマンド",
+    "args": [],
+    "options": [
       {
         "name": "-a",
-        "description": "-aの説明",
+        "description": "ファイル名がドットで始まる隠しファイルも表示する",
         "argument": null,
         "canCombine": true,
-        "sample": "-a sample"
+        "sample": "-a"
       },
       {
-        "name": "-b",
-        "description": "-bの説明",
+        "name": "-l",
+        "description": "ファイル名だけでなく詳細な情報も表示する",
         "argument": null,
         "canCombine": true,
-        "sample": "-b sample"
+        "sample": "-l"
+      },
+      {
+        "name": "-1",
+        "description": "1行ごとに表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-l"
+      },
+      {
+        "name": "-r",
+        "description": "リストを逆順に表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-r"
+      },
+      {
+        "name": "-t",
+        "description": "更新時刻順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-t"
+      },
+      {
+        "name": "-u",
+        "description": "アクセス時刻順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-S",
+        "description": "ファイルサイズ順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-S"
+      },
+      {
+        "name": "-X",
+        "description": "拡張子順にソートする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-X"
+      },
+      {
+        "name": "-R",
+        "description": "ディレクトリを再帰的に表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-R"
+      },
+      {
+        "name": "-m",
+        "description": "カンマ区切りでファイル名を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-m"
+      },
+      {
+        "name": "-h",
+        "description": "ファイルサイズの単位にKやMを使用して表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-h"
+      },
+      {
+        "name": "-k",
+        "description": "ファイルサイズのキロバイト単位で表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-k"
+      },
+      {
+        "name": "-F",
+        "description": "ファイルタイプを示す文字を付加して表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-F"
+      },
+      {
+        "name": "-p",
+        "description": "ディレクトリ名の後ろにスラッシュを付ける",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-p"
+      },
+      {
+        "name": "--full-time",
+        "description": "タイムスタンプを詳細に表示する",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--full-time"
       }
     ]
   }

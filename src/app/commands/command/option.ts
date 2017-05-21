@@ -1,6 +1,7 @@
 import { Argument } from './argument';
 import { IOptionParams } from './command-generator';
 import { IOptionInputParams } from './command-input-holder-generator';
+import _ from 'lodash';
 
 export class Option {
   name: string;
@@ -28,6 +29,10 @@ export class Option {
     };
   }
 
+  endsWithEqual(): boolean {
+    return _.endsWith(this.name, '=');
+  }
+
   get withoutHyphen(): string {
     return this.name.replace(/^-+/, '');
   }
@@ -37,6 +42,7 @@ export class Option {
 
     const input = this.argument.input ? this.argument.input : `<${this.argument.name}>`;
 
-    return `${this.name} ${input}`;
+    // --exclude="*.log" のようなオプションの対応
+    return this.endsWithEqual() ? this.name + input : `${this.name} ${input}`;
   }
 }

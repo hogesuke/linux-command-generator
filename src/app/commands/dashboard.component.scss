@@ -1,0 +1,31 @@
+h1 {
+  margin-bottom: 8px;
+  padding-bottom: 0;
+}
+
+.guidance {
+  margin-bottom: 50px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, .4);
+}
+
+.command-list {
+
+  .name {
+    width: 20%;
+    color: #4777d4;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .description {
+    width: 80%;
+  }
+}

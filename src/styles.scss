@@ -1,4 +1,5 @@
 @import './app/shared/style/variables';
+@import './app/shared/style/loading';
 
 html, body {
   height: 100%;
@@ -9,7 +10,7 @@ body {
   font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, .8);
 }
 
 #main {
@@ -32,20 +33,28 @@ body {
   }
 }
 
+h1 {
+  margin: 30px 0 40px 0;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .85);
+}
+
 h2 {
   margin: 20px 0 40px 0;
   padding-bottom: 20px;
   border-bottom: solid 1px #ddd;
   font-size: 28px;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, .85);
 }
 
 h3 {
-  margin: 8px 0 15px 0;
+  margin: 8px 0 18px 0;
   font-size: 18px;
   font-weight: bold;
-  color: rgba(87, 90, 97, 0.9);
+  color: rgba(87, 90, 97, .9);
 }
 
 a {
@@ -59,6 +68,40 @@ input.font-awesome {
   text-decoration: inherit;
 }
 
+table {
+  width: 100%;
+  font-size: 14px;
+
+  tr {
+    border-bottom: solid 1px #eee;
+  }
+
+  td {
+    padding: 10px 10px;
+    vertical-align: middle;
+  }
+}
+
 .monospaced {
   font-family: Monaco, courier, monospace;
+}
+
+.loading {
+  @include loading-spinner($bright-blue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: -1;
+}
+
+app-root:empty + .loading {
+  opacity: 1;
 }

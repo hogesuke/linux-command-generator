@@ -42,7 +42,7 @@
       &:not(:last-child) {
         margin-right: 7px;
       }
-      .name {
+      .name:not(.equal) {
         margin-right: 5px;
       }
     }
