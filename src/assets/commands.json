@@ -161,6 +161,13 @@
         },
         "canCombine": true,
         "sample": "--delete"
+      },
+      {
+        "name": "--progress",
+        "description": "転送状況をリアルタイムで表示する",
+        "argument": null,
+        "canCombine": false,
+        "sample": "--progress"
       }
     ]
   },
