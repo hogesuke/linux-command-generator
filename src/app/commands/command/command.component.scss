@@ -11,6 +11,7 @@ label {
   left: 265px;
   font-size: 24px;
   color: #d1d1d2;
+  z-index: 40000;
   transition: color .2s ease;
 
   &:hover {
