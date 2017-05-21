@@ -1,8 +1,11 @@
 <div id="dashbord">
+  <h1>Unix Command Generator</h1>
+  <p class="guidance">複雑なコマンド入力を補助するためのWebアプリケーション</p>
   <h3>コマンド一覧</h3>
-  <ul>
-    <li *ngFor="let command of commands">
-      <span>{{ command.name }}</span>
-    </li>
-  </ul>
+  <table class="command-list">
+    <tr *ngFor="let command of commands">
+      <td class="name" routerLink="/commands/{{ command.name }}">{{ command.name }}</td>
+      <td class="description">{{ command.description }}</td>
+    </tr>
+  </table>
 </div>

@@ -1,4 +1,8 @@
 <div>
+  <div class="home-link" routerLink="/commands">
+    <i class="fa fa-home" aria-hidden="true"></i>
+  </div>
+
   <h2>{{ command.name }}</h2>
   <div class="command-description" [class.fixed]="isGrammarFixed()">
     <span>{{ command.description }}</span>
@@ -37,7 +41,7 @@
   </div>
 
   <div id="block-history" [class.visible]="visibleHistory">
-    <h3>History</h3>
+    <h3>履歴</h3>
     <table class="history-table" *ngIf="hasHistory()">
       <tr *ngFor="let h of histories">
         <td class="sentence monospaced" (click)="applyHistory(h)">{{ h.sentence }}</td>
@@ -48,7 +52,7 @@
   </div>
 
   <div id="block-arg" *ngIf="hasArgument()">
-    <h3>Arguments</h3>
+    <h3>引数</h3>
     <table class="arg-table">
       <tr *ngFor="let arg of command.args">
         <td class="arg-name monospaced" [class.required]="arg.required">{{ arg.name }}</td>
@@ -65,7 +69,7 @@
   </div>
 
   <div id="block-option">
-    <h3>Options</h3>
+    <h3>オプション</h3>
     <table class="option-table">
       <tbody>
       <tr *ngFor="let op of command.options">

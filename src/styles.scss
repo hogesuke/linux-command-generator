@@ -32,6 +32,14 @@ body {
   }
 }
 
+h1 {
+  margin: 20px 0 40px 0;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .85);
+}
+
 h2 {
   margin: 20px 0 40px 0;
   padding-bottom: 20px;
@@ -57,6 +65,20 @@ input.font-awesome {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
+}
+
+table {
+  width: 100%;
+  font-size: 14px;
+
+  tr {
+    border-bottom: solid 1px #eee;
+  }
+
+  td {
+    padding: 10px 10px;
+    vertical-align: middle;
+  }
 }
 
 .monospaced {
