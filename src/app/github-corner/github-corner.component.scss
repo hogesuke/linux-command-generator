@@ -1,9 +1,11 @@
+@import '../shared/style/variables';
+
 .github-corner svg {
   position: fixed;
   bottom: 0;
   right: 15px;
   border: 0;
-  fill: #61c3bf;
+  fill: $bright-blue;
   color:#fff;
   transform: rotate(90deg);
 }
