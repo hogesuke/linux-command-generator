@@ -320,8 +320,17 @@ table {
   .arg-table {
 
     .arg-name {
+      position: relative;
       width: 25%;
       padding-left: 23px;
+    }
+
+    .arg-name.required::before {
+      position: absolute;
+      left: 10px;
+      content: "*";
+      color: rgba(209, 48, 67, .8);
+      font-size: 14px;
     }
 
     .arg-description {

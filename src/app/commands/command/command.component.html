@@ -51,7 +51,7 @@
     <h3>Arguments</h3>
     <table class="arg-table">
       <tr *ngFor="let arg of command.args">
-        <td class="arg-name monospaced">{{ arg.name }}</td>
+        <td class="arg-name monospaced" [class.required]="arg.required">{{ arg.name }}</td>
         <td class="arg-description">{{ arg.description }}</td>
         <td class="arg-input">
           <input type="text"
