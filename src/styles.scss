@@ -9,7 +9,7 @@ body {
   font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, .8);
 }
 
 #main {
@@ -38,14 +38,14 @@ h2 {
   border-bottom: solid 1px #ddd;
   font-size: 28px;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, .85);
 }
 
 h3 {
   margin: 8px 0 18px 0;
   font-size: 18px;
   font-weight: bold;
-  color: rgba(87, 90, 97, 0.9);
+  color: rgba(87, 90, 97, .9);
 }
 
 a {
