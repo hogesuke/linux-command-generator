@@ -4,7 +4,7 @@
   <h3>コマンド一覧</h3>
   <table class="command-list">
     <tr *ngFor="let command of commands">
-      <td class="name" routerLink="/commands/{{ command.name }}">{{ command.name }}</td>
+      <td class="name monospaced" routerLink="/commands/{{ command.name }}">{{ command.name }}</td>
       <td class="description">{{ command.description }}</td>
     </tr>
   </table>
