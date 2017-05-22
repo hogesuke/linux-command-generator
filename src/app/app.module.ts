@@ -36,7 +36,8 @@ export function commandServiceFactory(commandService: CommandService) {
     RouterModule.forRoot([
       { path: '', redirectTo: '/commands', pathMatch: 'full' },
       { path: 'commands', component: DashboardComponent },
-      { path: 'commands/:name', component: CommandComponent }
+      { path: 'commands/:name', component: CommandComponent },
+      { path: '**', redirectTo: '/commands' }
     ])
   ],
   providers: [
