@@ -87,7 +87,7 @@ table {
 }
 
 .loading {
-  @include loading-spinner($dark-gray);
+  @include loading-spinner(#aaa);
   position: fixed;
   top: 0;
   left: 0;

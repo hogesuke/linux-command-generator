@@ -15,7 +15,7 @@ label {
   transition: color .2s ease;
 
   &:hover {
-    color: $dark-gray;
+    color: #aaa;
     cursor: pointer;
   }
 
@@ -145,7 +145,7 @@ label {
         transition: 0s;
 
         &::before{
-          box-shadow:inset 0 0 0 30px $dark-gray;
+          box-shadow:inset 0 0 0 30px $light-blue;
           transition: 0s;
         }
       }
