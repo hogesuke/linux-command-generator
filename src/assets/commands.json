@@ -131,23 +131,23 @@
       },
       {
         "name": "-n",
-        "description": "DryRunを行い転送内容のみを表示する",
+        "description": "--dry-run を指定した場合と同じ",
         "argument": null,
         "canCombine": true,
         "sample": "-n"
       },
       {
-        "name": "-n",
+        "name": "--dry-run",
         "description": "DryRunを行い転送内容のみを表示する",
         "argument": null,
-        "canCombine": true,
-        "sample": "-n"
+        "canCombine": false,
+        "sample": "--dry-run"
       },
       {
         "name": "--delete",
         "description": "コピー元に存在しないファイルは削除する",
         "argument": null,
-        "canCombine": true,
+        "canCombine": false,
         "sample": "--delete"
       },
       {
@@ -159,8 +159,8 @@
           "required": true,
           "sample": "\"*.log\""
         },
-        "canCombine": true,
-        "sample": "--delete"
+        "canCombine": false,
+        "sample": "--exclude="
       },
       {
         "name": "--progress",
@@ -267,7 +267,7 @@
         "description": "1行ごとに表示する",
         "argument": null,
         "canCombine": true,
-        "sample": "-l"
+        "sample": "-1"
       },
       {
         "name": "-r",
