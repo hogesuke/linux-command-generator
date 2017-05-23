@@ -87,7 +87,7 @@ table {
 }
 
 .loading {
-  @include loading-spinner(#aaa);
+  @include loading-spinner($light-blue);
   position: fixed;
   top: 0;
   left: 0;
