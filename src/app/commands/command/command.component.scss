@@ -151,16 +151,12 @@ label {
       }
     }
 
-    .copy-button {
-      @include button(1, 'copy');
-    }
-
     .clear-button {
-      @include button(2, 'clear');
+      @include button(1, 'clear');
     }
 
     .history-button {
-      @include button(3, 'history');
+      @include button(2, 'history');
       z-index: 1;
 
       &.badge::after {
@@ -179,6 +175,10 @@ label {
       &.badge.active::after {
         background-color: #fff;
       }
+    }
+
+    .copy-button {
+      @include button(3, 'copy');
     }
 
     .balloon{
@@ -223,15 +223,15 @@ label {
       }
     }
 
-    .copy-balloon {
+    .clear-balloon {
       @include balloon-position(1);
     }
 
-    .clear-balloon {
+    .history-balloon {
       @include balloon-position(2);
     }
 
-    .history-balloon {
+    .copy-balloon {
       @include balloon-position(3);
     }
   }

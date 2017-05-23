@@ -21,21 +21,21 @@
       <button class="copy-button">
         <i class="fa fa-files-o" aria-hidden="true"></i>
       </button>
-      <button class="clear-button" (click)="command.clear()">
-        <i class="fa fa-eraser" aria-hidden="true"></i>
-      </button>
       <button class="history-button" (click)="toggleHistory()" [class.badge]="hasHistory()" [ngClass]="{ active: visibleHistory }">
         <i class="fa fa-history" aria-hidden="true"></i>
+      </button>
+      <button class="clear-button" (click)="command.clear()">
+        <i class="fa fa-eraser" aria-hidden="true"></i>
       </button>
 
       <div class="balloon copy-balloon" [class.bottom]="isBalloonBottom()">
         <p>コピー</p>
       </div>
-      <div class="balloon clear-balloon" [class.bottom]="isBalloonBottom()">
-        <p>クリア</p>
-      </div>
       <div class="balloon history-balloon" [class.bottom]="isBalloonBottom()">
         <p>履歴</p>
+      </div>
+      <div class="balloon clear-balloon" [class.bottom]="isBalloonBottom()">
+        <p>クリア</p>
       </div>
     </div>
   </div>
