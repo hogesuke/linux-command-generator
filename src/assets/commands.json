@@ -354,5 +354,60 @@
         "sample": "--full-time"
       }
     ]
+  },
+  {
+    "name": "ln",
+    "description": "ハードリンクまたはシンボリックリンクを作成するコマンド",
+    "args": [
+      {
+        "name": "file_name",
+        "description": "ファイル名",
+        "required": true,
+        "sample": "target"
+      },
+      {
+        "name": "link_name",
+        "description": "リンク名",
+        "required": true,
+        "sample": "link_dest"
+      }
+    ],
+    "options": [
+      {
+        "name": "-s",
+        "description": "シンボリックリンクを作成する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-s"
+      },
+      {
+        "name": "-f",
+        "description": "リンクと同名のファイルがある場合でも強制上書きする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-f"
+      },
+      {
+        "name": "-i",
+        "description": "リンクと同名のファイルがある場合に上書きするか確認する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-i"
+      },
+      {
+        "name": "-n",
+        "description": "既存のシンボリックリンクをリンク名として指定した場合、リンクの参照先にリンクを作るのではなく、シンボリックリンクを置き換える。-fオプションと共に指定する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-n"
+      },
+      {
+        "name": "-v",
+        "description": "リンクの情報を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      }
+    ]
   }
 ]
