@@ -409,5 +409,60 @@
         "sample": "-v"
       }
     ]
+  },
+  {
+    "name": "cp",
+    "description": "ファイルやディレクトリをコピーするコマンド",
+    "args": [
+      {
+        "name": "source",
+        "description": "コピー元",
+        "required": true,
+        "sample": "/path/to/source/file"
+      },
+      {
+        "name": "destination",
+        "description": "コピー先",
+        "required": true,
+        "sample": "/path/to/dest/file"
+      }
+    ],
+    "options": [
+      {
+        "name": "-a",
+        "description": "可能な限り属性（オーナー/グループ/パーミッション/タイムスタンプ）とディレクトリ構造を保持したままコピーを行う",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-a"
+      },
+      {
+        "name": "-b",
+        "description": "ファイルを上書きする場合にバックアップを作成する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-b"
+      },
+      {
+        "name": "-d",
+        "description": "シンボリックリンクのコピーを行う場合は実態をコピーする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-d"
+      },
+      {
+        "name": "-f",
+        "description": "同名のファイルが存在する場合にも確認せずに上書きする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-f"
+      },
+      {
+        "name": "-i",
+        "description": "同名のファイルが存在する場合に上書きするか確認する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-i"
+      }
+    ]
   }
 ]
