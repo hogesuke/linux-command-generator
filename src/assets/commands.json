@@ -528,7 +528,7 @@
     "options": [
       {
         "name": "-c",
-        "description": "バイト数のみ表示する",
+        "description": "バイト数を表示する",
         "argument": null,
         "canCombine": true,
         "sample": "-c"
