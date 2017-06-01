@@ -513,5 +513,47 @@
         "sample": "-v"
       }
     ]
+  },
+  {
+    "name": "wc",
+    "description": "テキストの行数、単語数、バイト数をカウントするコマンド",
+    "args": [
+      {
+        "name": "file",
+        "description": "対象のファイル",
+        "required": false,
+        "sample": "/path/to/target/file"
+      }
+    ],
+    "options": [
+      {
+        "name": "-c",
+        "description": "バイト数のみ表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-c"
+      },
+      {
+        "name": "-l",
+        "description": "行数を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-l"
+      },
+      {
+        "name": "-m",
+        "description": "文字数を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-m"
+      },
+      {
+        "name": "-w",
+        "description": "単語数を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-w"
+      }
+    ]
   }
 ]
