@@ -555,5 +555,74 @@
         "sample": "-w"
       }
     ]
+  },
+  {
+    "name": "mv",
+    "description": "ファイルやディレクトリの移動や名前の変更を行うコマンド",
+    "args": [
+      {
+        "name": "source",
+        "description": "移動元のファイルやディレクトリ",
+        "required": true,
+        "sample": "/path/to/source"
+      },
+      {
+        "name": "destination",
+        "description": "移動先のファイルやディレクトリ",
+        "required": true,
+        "sample": "/path/to/dest"
+      }
+    ],
+    "options": [
+      {
+        "name": "-b",
+        "description": "ファイルやディレクトリを上書きする場合にバックアップを作成する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-b"
+      },
+      {
+        "name": "-f",
+        "description": "同名のファイルやディレクトリがある場合でも強制上書きする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-f"
+      },
+      {
+        "name": "-n",
+        "description": "同名のファイルやディレクトリがある場合、上書きしない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-n"
+      },
+      {
+        "name": "-i",
+        "description": "同名のファイルやディレクトリがある場合に上書きするか確認する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-i"
+      },
+      {
+        "name": "-u",
+        "description": "同名のファイルが存在する場合に、コピー先のファイルのほうがタイムスタンプが新しい、またはタイムスタンプが同じ場合は上書きしない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-u",
+        "description": "同名のファイルが存在する場合に、コピー先のファイルのほうがタイムスタンプが新しい、またはタイムスタンプが同じ場合は上書きしない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-v",
+        "description": "移動する対象の情報を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      }
+    ]
   }
 ]
