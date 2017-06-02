@@ -610,13 +610,6 @@
         "sample": "-u"
       },
       {
-        "name": "-u",
-        "description": "同名のファイルが存在する場合に、コピー先のファイルのほうがタイムスタンプが新しい、またはタイムスタンプが同じ場合は上書きしない",
-        "argument": null,
-        "canCombine": true,
-        "sample": "-u"
-      },
-      {
         "name": "-v",
         "description": "移動する対象の情報を表示する",
         "argument": null,
