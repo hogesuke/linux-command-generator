@@ -617,5 +617,75 @@
         "sample": "-v"
       }
     ]
+  },
+  {
+    "name": "cat",
+    "description": "ファイルの内容を表示するコマンド",
+    "args": [
+      {
+        "name": "file_name",
+        "description": "ファイル名",
+        "required": true,
+        "sample": "/path/to/file"
+      }
+    ],
+    "options": [
+      {
+        "name": "-A",
+        "description": "-vET を指定した場合と同じ",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-A"
+      },
+      {
+        "name": "-b",
+        "description": "行番号を表示するが、-nとは異なり空行には行番号を付けない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-b"
+      },
+      {
+        "name": "-E",
+        "description": "各行の末尾に $ を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-E"
+      },
+      {
+        "name": "-n",
+        "description": "行番号を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-n"
+      },
+      {
+        "name": "-s",
+        "description": "連続する空行を1行にまとめて表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-s"
+      },
+      {
+        "name": "-t",
+        "description": "-vT を指定した場合と同じ",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-t"
+      },
+      {
+        "name": "-T",
+        "description": "タブを ^I で表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-T"
+      },
+      {
+        "name": "-v",
+        "description": "改行とタブを除く制御コードを制御文字に置き換えて表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      }
+    ]
   }
 ]
