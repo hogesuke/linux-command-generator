@@ -12,11 +12,10 @@
   z-index: 20000;
 
   ul li {
-    padding: 18px 15px;
+    padding: 18px 20px;
     font-size: 15px;
     color: $text-base-color;
     list-style: none;
-    border-bottom: solid 1px #e1dee1;
     transition: background-color .2s ease;
 
     &:hover {
@@ -24,12 +23,8 @@
     }
   }
 
-  ul a:first-of-type li {
-    border-top: solid 1px #e1dee1;
-  }
-
   .search {
-    margin: 15px;
+    margin: 15px 20px;
 
     input {
       @include text-input;
