@@ -687,5 +687,64 @@
         "sample": "-v"
       }
     ]
+  },
+  {
+    "name": "tail",
+    "description": "テキストファイルの最終行から数行を表示するコマンド",
+    "args": [
+      {
+        "name": "file",
+        "description": "対象のファイル",
+        "required": false,
+        "sample": "/path/to/target/file"
+      }
+    ],
+    "options": [
+      {
+        "name": "-c",
+        "description": "指定のバイト数表示する",
+        "argument": {
+          "name": "bytes",
+          "description": "バイト数",
+          "required": true,
+          "sample": "1024k"
+        },
+        "canCombine": false,
+        "sample": "-c 1024k"
+      },
+      {
+        "name": "-n",
+        "description": "指定の行数表示する",
+        "argument": {
+          "name": "lines",
+          "description": "行数",
+          "required": true,
+          "sample": "100"
+        },
+        "canCombine": false,
+        "sample": "-n 100"
+      },
+      {
+        "name": "-f",
+        "description": "常時ファイルの追記を監視し、追記された行を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-f"
+      },
+      {
+        "name": "-q",
+        "description": "対象のファイル名を表示しない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-q"
+      },
+      {
+        "name": "-v",
+        "description": "常に対象ファイル名をヘッダに表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      }
+    ]
   }
 ]
