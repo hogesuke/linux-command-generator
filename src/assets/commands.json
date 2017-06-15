@@ -782,7 +782,7 @@
       },
       {
         "name": "-p",
-        "description": "",
+        "description": "パターンにマッチした行を先頭に表示する",
         "argument": {
           "name": "pattern",
           "description": "先頭にしたい行のパターン",
