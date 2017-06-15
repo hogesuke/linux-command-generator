@@ -693,10 +693,10 @@
     "description": "テキストファイルの最終行から数行を表示するコマンド",
     "args": [
       {
-        "name": "file",
-        "description": "対象のファイル",
-        "required": false,
-        "sample": "/path/to/target/file"
+        "name": "file_name",
+        "description": "ファイル名",
+        "required": true,
+        "sample": "/path/to/file"
       }
     ],
     "options": [
@@ -744,6 +744,74 @@
         "argument": null,
         "canCombine": true,
         "sample": "-v"
+      }
+    ]
+  },
+  {
+    "name": "less",
+    "description": "テキストファイルを閲覧するコマンド",
+    "args": [
+      {
+        "name": "file_name",
+        "description": "ファイル名",
+        "required": true,
+        "sample": "/path/to/file"
+      }
+    ],
+    "options": [
+      {
+        "name": "-e",
+        "description": "表示が最後の行まで到達したら、lessでの表示を終了する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-e"
+      },
+      {
+        "name": "-F",
+        "description": "画面内に表示が収まる場合にすぐにlessを終了させる。-Xと共に指定する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-F"
+      },
+      {
+        "name": "-N",
+        "description": "行番号を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-N"
+      },
+      {
+        "name": "-p",
+        "description": "",
+        "argument": {
+          "name": "pattern",
+          "description": "先頭にしたい行のパターン",
+          "required": true,
+          "sample": "hoge.*fuga"
+        },
+        "canCombine": false,
+        "sample": "-p"
+      },
+      {
+        "name": "-s",
+        "description": "連続する空行を1行にまとめて表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-s"
+      },
+      {
+        "name": "-S",
+        "description": "長い行を折り返さずに表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-S"
+      },
+      {
+        "name": "-X",
+        "description": "lessでの表示を終了した際に、表示をクリアしない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-X"
       }
     ]
   }
