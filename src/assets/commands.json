@@ -814,5 +814,75 @@
         "sample": "-X"
       }
     ]
+  },
+  {
+    "name": "more",
+    "description": "テキストファイルをページ単位で閲覧するコマンド",
+    "args": [
+      {
+        "name": "file_name",
+        "description": "ファイル名",
+        "required": true,
+        "sample": "/path/to/file"
+      }
+    ],
+    "options": [
+      {
+        "name": "-d",
+        "description": "ページ下部にキー操作についてのメッセージを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-d"
+      },
+      {
+        "name": "-f",
+        "description": "画面表示の行数ではなく、実際の行数（論理行）をカウントする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-f"
+      },
+      {
+        "name": "-l",
+        "description": "改ページを表す特殊文字(^L)を無視する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-l"
+      },
+      {
+        "name": "-u",
+        "description": "アンダーラインを表示しない",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-u",
+        "description": "下線を付けづに表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-u"
+      },
+      {
+        "name": "-s",
+        "description": "連続する空行を1行にまとめて表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-s"
+      },
+      {
+        "name": "-数値",
+        "description": "1ページに表示する行数を指定する",
+        "argument": null,
+        "canCombine": false,
+        "sample": "-10"
+      },
+      {
+        "name": "+数値",
+        "description": "指定した数値の行目から表示する",
+        "argument": null,
+        "canCombine": false,
+        "sample": "+100"
+      }
+    ]
   }
 ]
