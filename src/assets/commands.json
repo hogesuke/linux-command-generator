@@ -244,6 +244,83 @@
     ]
   },
   {
+    "name": "ssh",
+    "description": "暗号化通信のsshプロトコルを使用しリモートホストに接続するコマンド",
+    "args": [
+      {
+        "name": "hostname",
+        "description": "接続先のホスト名",
+        "required": true,
+        "sample": "example.com"
+      },
+      {
+        "name": "command",
+        "description": "接続先ホストで実行するコマンド",
+        "required": false,
+        "sample": "\"ls -la\""
+      }
+    ],
+    "options": [
+      {
+        "name": "-i",
+        "description": "使用する秘密鍵を指定する",
+        "argument": {
+          "name": "private_key",
+          "description": "秘密鍵のパス",
+          "required": true,
+          "sample": "~/.ssh/id_rsa_hoge"
+        },
+        "canCombine": false,
+        "sample": "-i <private_key>"
+      },
+      {
+        "name": "-l",
+        "description": "ログインするユーザを指定する",
+        "argument": {
+          "name": "user",
+          "description": "ログインユーザ",
+          "required": true,
+          "sample": "admin"
+        },
+        "canCombine": false,
+        "sample": "-l <user>"
+      },
+      {
+        "name": "-p",
+        "description": "接続先ポート番号を指定する",
+        "argument": {
+          "name": "port",
+          "description": "ポート番号",
+          "required": true,
+          "sample": "12345"
+        },
+        "canCombine": false,
+        "sample": "-p <port>"
+      },
+      {
+        "name": "-v",
+        "description": "詳細な情報を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-v"
+      },
+      {
+        "name": "-X",
+        "description": "X11のポートフォワーディングを有効にし、接続先のXアプリケーションを実行可能とする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-X"
+      },
+      {
+        "name": "-x",
+        "description": "X11のポートフォワーディングを無効にする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-x"
+      }
+    ]
+  },
+  {
     "name": "ls",
     "description": "ファイルやディレクトリの一覧を表示するコマンド",
     "args": [],
