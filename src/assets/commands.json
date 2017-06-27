@@ -1013,5 +1013,33 @@
         "sample": "+100"
       }
     ]
+  },
+  {
+    "name": "cd",
+    "description": "作業ディレクトリを移動するコマンド",
+    "args": [
+      {
+        "name": "destination",
+        "description": "移動先のディレクトリ",
+        "required": true,
+        "sample": "/path/to/dir"
+      }
+    ],
+    "options": [
+      {
+        "name": "-L",
+        "description": "指定のディレクトリがシンボリックリンクの場合、シンボリックリンクに移動する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-L"
+      },
+      {
+        "name": "-P",
+        "description": "指定のディレクトリがシンボリックリンクの場合、シンボリックリンクのターゲットに移動する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-P"
+      }
+    ]
   }
 ]
