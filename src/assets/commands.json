@@ -1047,10 +1047,10 @@
     "description": "ネットワークの疎通を確認するコマンド",
     "args": [
       {
-        "name": "destination",
-        "description": "移動先のディレクトリ",
+        "name": "host",
+        "description": "対象のホスト",
         "required": true,
-        "sample": "/path/to/dir"
+        "sample": "www.example.com"
       }
     ],
     "options": [
