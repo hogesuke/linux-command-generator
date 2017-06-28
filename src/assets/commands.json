@@ -1091,30 +1091,6 @@
         "sample": "-p"
       },
       {
-        "name": "-p",
-        "description": "送信するパケット内容を16進数で指定する",
-        "argument": {
-          "name": "packet",
-          "description": "パケット内容（16進数）",
-          "required": true,
-          "sample": "5A5A5A"
-        },
-        "canCombine": false,
-        "sample": "-p"
-      },
-      {
-        "name": "-s",
-        "description": "送信するパケットサイズを指定する",
-        "argument": {
-          "name": "size",
-          "description": "パケットサイズ（バイト）",
-          "required": true,
-          "sample": "10"
-        },
-        "canCombine": false,
-        "sample": "-s"
-      },
-      {
         "name": "-s",
         "description": "送信するパケットサイズを指定する。デフォルトは56バイト",
         "argument": {
