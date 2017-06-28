@@ -1041,5 +1041,103 @@
         "sample": "-P"
       }
     ]
+  },
+  {
+    "name": "ping",
+    "description": "ネットワークの疎通を確認するコマンド",
+    "args": [
+      {
+        "name": "destination",
+        "description": "移動先のディレクトリ",
+        "required": true,
+        "sample": "/path/to/dir"
+      }
+    ],
+    "options": [
+      {
+        "name": "-c",
+        "description": "試行回数を指定する",
+        "argument": {
+          "name": "count",
+          "description": "試行回数",
+          "required": true,
+          "sample": "10"
+        },
+        "canCombine": false,
+        "sample": "-c"
+      },
+      {
+        "name": "-i",
+        "description": "試行間隔を指定する",
+        "argument": {
+          "name": "second",
+          "description": "試行間隔（秒）",
+          "required": true,
+          "sample": "3"
+        },
+        "canCombine": false,
+        "sample": "-i"
+      },
+      {
+        "name": "-p",
+        "description": "送信するパケット内容を16進数で指定する",
+        "argument": {
+          "name": "packet",
+          "description": "パケット内容（16進数）",
+          "required": true,
+          "sample": "5A5A5A"
+        },
+        "canCombine": false,
+        "sample": "-p"
+      },
+      {
+        "name": "-p",
+        "description": "送信するパケット内容を16進数で指定する",
+        "argument": {
+          "name": "packet",
+          "description": "パケット内容（16進数）",
+          "required": true,
+          "sample": "5A5A5A"
+        },
+        "canCombine": false,
+        "sample": "-p"
+      },
+      {
+        "name": "-s",
+        "description": "送信するパケットサイズを指定する",
+        "argument": {
+          "name": "size",
+          "description": "パケットサイズ（バイト）",
+          "required": true,
+          "sample": "10"
+        },
+        "canCombine": false,
+        "sample": "-s"
+      },
+      {
+        "name": "-s",
+        "description": "送信するパケットサイズを指定する。デフォルトは56バイト",
+        "argument": {
+          "name": "size",
+          "description": "パケットサイズ",
+          "required": true,
+          "sample": "100"
+        },
+        "canCombine": false,
+        "sample": "-s"
+      },
+      {
+        "name": "-t",
+        "description": "パケットのTTLを指定する",
+        "argument": {
+          "name": "ttl",
+          "description": "TTL",
+          "required": true,
+          "sample": "12"
+        },
+        "canCombine": false,
+        "sample": "-t"
+      }
+    ]
   }
 ]
