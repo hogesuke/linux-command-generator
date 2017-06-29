@@ -1043,6 +1043,27 @@
     ]
   },
   {
+    "name": "pwd",
+    "description": "現在の作業ディレクトリのフルパスを表示するコマンド",
+    "args": null,
+    "options": [
+      {
+        "name": "-L",
+        "description": "作業ディレクトリがシンボリックリンクの場合、シンボリックリンクをそのまま表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-L"
+      },
+      {
+        "name": "-P",
+        "description": "作業ディレクトリがシンボリックリンクの場合、シンボリックリンクをたどったパスを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-P"
+      }
+    ]
+  },
+  {
     "name": "ping",
     "description": "ネットワークの疎通を確認するコマンド",
     "args": [
