@@ -1045,7 +1045,7 @@
   {
     "name": "pwd",
     "description": "現在の作業ディレクトリのフルパスを表示するコマンド",
-    "args": null,
+    "args": [],
     "options": [
       {
         "name": "-L",
