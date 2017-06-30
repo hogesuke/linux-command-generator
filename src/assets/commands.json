@@ -1136,5 +1136,67 @@
         "sample": "-t"
       }
     ]
+  },
+  {
+    "name": "cal",
+    "description": "カレンダーを表示するコマンド",
+    "args": [
+      {
+        "name": "month",
+        "description": "対象の月（必ず対象の年と併せて指定する）",
+        "required": false,
+        "sample": "12"
+      },
+      {
+        "name": "year",
+        "description": "対象の年（対象の月を指定する場合は必須）",
+        "required": false,
+        "sample": "2020"
+      }
+    ],
+    "options": [
+      {
+        "name": "-1",
+        "description": "今月の1ヶ月分のカレンダーを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-1"
+      },
+      {
+        "name": "-3",
+        "description": "先月・今月・来月の3ヶ月分のカレンダーを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-3"
+      },
+      {
+        "name": "-y",
+        "description": "今年1年分のカレンダーを表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-y"
+      },
+      {
+        "name": "-j",
+        "description": "1月1日を起点とした経過日（ユリウス日）を表示する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-j"
+      },
+      {
+        "name": "-m",
+        "description": "月曜日を週の始まりとする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-m"
+      },
+      {
+        "name": "-s",
+        "description": "日曜日を週の始まりとする",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-s"
+      }
+    ]
   }
 ]
