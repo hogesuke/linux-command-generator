@@ -1198,5 +1198,74 @@
         "sample": "-s"
       }
     ]
+  },
+  {
+    "name": "history",
+    "description": "実行したコマンドの履歴を表示するコマンド",
+    "args": [
+      {
+        "name": "count",
+        "description": "表示するコマンド履歴の数",
+        "required": false,
+        "sample": "100"
+      }
+    ],
+    "options": [
+      {
+        "name": "-c",
+        "description": "コマンド履歴を削除する",
+        "argument": null,
+        "canCombine": true,
+        "sample": "-c"
+      },
+      {
+        "name": "-d",
+        "description": "指定した番号のコマンド履歴を削除する",
+        "argument": {
+          "name": "number",
+          "description": "対象の番号",
+          "required": true,
+          "sample": "10"
+        },
+        "canCombine": true,
+        "sample": "-d"
+      },
+      {
+        "name": "-w",
+        "description": "コマンド履歴をファイルに書き出す",
+        "argument": {
+          "name": "file",
+          "description": "対象のファイル",
+          "required": true,
+          "sample": "/path/to/target/file"
+        },
+        "canCombine": false,
+        "sample": "-w"
+      },
+      {
+        "name": "-a",
+        "description": "コマンド履歴をファイルに追記する",
+        "argument": {
+          "name": "file",
+          "description": "対象のファイル",
+          "required": true,
+          "sample": "/path/to/target/file"
+        },
+        "canCombine": false,
+        "sample": "-a"
+      },
+      {
+        "name": "-r",
+        "description": "コマンド履歴のファイルを読み込み、コマンド履歴に追加する",
+        "argument": {
+          "name": "file",
+          "description": "対象のファイル",
+          "required": true,
+          "sample": "/path/to/target/file"
+        },
+        "canCombine": false,
+        "sample": "-r"
+      }
+    ]
   }
 ]
